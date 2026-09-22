@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تقرير نقل تجربة بحث الدرس</title>
+<style>
+:root{
+  --navy:#0d3b66;
+  --blue:#dff2fb;
+  --mint:#dff3e7;
+  --line:#6aaed6;
+  --teal:#1f9d8a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#f4f7f9;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;
+  color:#0f2f57;
+}
+.wrap{
+  max-width:980px;
+  margin:24px auto;
+  background:#fff;
+  padding:24px;
+  border:1px solid #d8e6ef;
+}
+.header{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  align-items:start;
+  gap:16px;
+  border-bottom:2px solid var(--navy);
+  padding-bottom:14px;
+}
+.header .right{text-align:right;line-height:1.7;font-weight:700}
+.header .left{text-align:left;line-height:1.9;font-weight:700}
+.header-row{
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  gap:8px;
+  direction:rtl;
+}
+.header-row input{
+  width:150px;
+  border:0;
+  border-bottom:1px dotted #789;
+  background:#fff;
+  text-align:center;
+  padding:2px 4px;
+}
+.logo{
+  text-align:center;
+  color:var(--teal);
+  font-weight:800;
+  font-size:28px;
+  line-height:1.2
+}
+.logo small{display:block;color:#607d8b;font-size:14px;font-weight:500}
+.title{
+  margin:18px 0 14px;
+  background:linear-gradient(90deg,var(--blue),#eaf7fc,var(--blue));
+  border-radius:14px;
+  padding:14px;
+  text-align:center;
+  font-size:30px;
+  font-weight:800;
+  color:var(--navy)
+}
+.section{
+  margin-top:14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+}
+.section h2{
+  margin:0;
+  padding:10px 14px;
+  background:linear-gradient(90deg,var(--mint),#eaf8ef);
+  font-size:20px;
+  color:var(--navy)
+}
+table{width:100%;border-collapse:collapse}
+td,th{border:1px solid #a8cce2;padding:9px;vertical-align:middle}
+th{background:#edf8fc}
+.label{width:210px;background:#eaf6fb;font-weight:700}
+.help{display:block;font-size:12px;font-weight:500;color:#54758a;margin-top:2px}
+input,textarea{
+  width:100%;
+  border:0;
+  outline:0;
+  font:inherit;
+  background:#fff;
+  padding:6px;
+  color:#163c5f
+}
+textarea{min-height:105px;resize:vertical;line-height:1.6}
+.attendees input{text-align:center;min-height:30px}
+.approval{
+  display:grid;
+  grid-template-columns:1fr 180px 1fr;
+  gap:16px;
+  align-items:stretch;
+  padding:16px
+}
+.sig{padding:10px;text-align:center;font-weight:700}
+.sig input{border-bottom:1px dotted #4e88b0;margin-top:10px;text-align:center}
+.stamp{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e8f6fc;
+  border-radius:8px;
+  font-weight:700
+}
+.actions{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin:22px 0 4px;
+  flex-wrap:wrap;
+}
+.btn{
+  border:0;
+  border-radius:10px;
+  padding:12px 18px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:15px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+}
+.primary{background:#0b84c6;color:#fff}
+.secondary{background:#e9f5f1;color:#0f5b50}
+.danger{background:#f5ecec;color:#8b2f2f}
+.note{text-align:center;color:#47738f;font-size:13px;margin-top:8px}
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:16px;
+  font-size:13px;
+  color:#2b5473
+}
+@media(max-width:720px){
+  .wrap{margin:0;padding:12px}
+  .header{grid-template-columns:1fr}
+  .header .left,.header .right,.logo{text-align:center}
+  .header-row{justify-content:center}
+  .approval{grid-template-columns:1fr}
+  .title{font-size:24px}
+  .label{width:155px}
+}
+@media print{
+  @page{size:A4 portrait;margin:4mm}
+  html,body{
+    width:210mm!important;height:297mm!important;
+    margin:0!important;padding:0!important;background:#fff!important;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+  body{font-size:7pt!important}
+  .wrap{
+    width:202mm!important;max-width:202mm!important;
+    margin:0 auto!important;padding:0!important;border:0!important;
+  }
+  .header{
+    grid-template-columns:1fr .85fr 1fr!important;
+    gap:3mm!important;padding-bottom:1.3mm!important;border-bottom-width:1px!important;
+  }
+  .header .right,.header .left{font-size:6.9pt!important;line-height:1.16!important}
+  .header-row{gap:1mm!important}
+  .header-row input{width:23mm!important;height:3.7mm!important;font-size:6.7pt!important;padding:0!important}
+  .logo{font-size:12pt!important;line-height:1!important}
+  .logo small{font-size:5.4pt!important}
+  .title{
+    margin:1.2mm 0 .8mm!important;padding:1.4mm!important;
+    border-radius:2mm!important;font-size:12pt!important;line-height:1!important;
+  }
+  .section{margin-top:.8mm!important;border-radius:1.5mm!important;break-inside:avoid!important}
+  .section h2{padding:.85mm 1.3mm!important;font-size:8pt!important;line-height:1!important}
+  table{table-layout:fixed!important}
+  td,th{padding:.4mm .6mm!important;font-size:6.5pt!important;line-height:1!important}
+  .label{width:35mm!important}
+  .help{font-size:5.6pt!important;margin-top:.2mm!important}
+  input,textarea{font-size:6.5pt!important;padding:0!important;line-height:1!important}
+  textarea{
+    min-height:11mm!important;height:11mm!important;max-height:11mm!important;
+    overflow:hidden!important;resize:none!important;
+  }
+  .attendees th,.attendees td{height:4.5mm!important;padding:.2mm .55mm!important}
+  .attendees input{min-height:3mm!important;height:3mm!important;padding:0!important}
+  .approval{grid-template-columns:1fr 26mm 1fr!important;gap:1.5mm!important;padding:1.5mm!important}
+  .sig{padding:.5mm!important;font-size:6.7pt!important;line-height:1!important}
+  .sig input{margin-top:.6mm!important;height:3.4mm!important}
+  .stamp{border-radius:1.5mm!important;font-size:6.7pt!important}
+  .footer{margin-top:1mm!important;font-size:6pt!important;line-height:1!important}
+  .actions,.note{display:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="right">
+      المملكة العربية السعودية<br>
+      وزارة التعليم<br>
+      الإدارة العامة للتعليم بمنطقة الرياض
+    </div>
+    <div class="logo">
+      وزارة التعليم
+      <small>Ministry of Education</small>
+    </div>
+    <div class="left">
+      ثانوية حفصة بنت سيرين
+      <div class="header-row"><span>الفصل الدراسي:</span><input id="term"></div>
+      <div class="header-row"><span>العام:</span><input id="year"></div>
+    </div>
+  </div>
+
+  <div class="title">تقرير نقل تجربة بحث الدرس</div>
+
+  <div class="section">
+    <h2>أولًا: بيانات البحث</h2>
+    <table>
+      <tr>
+        <td class="label">عنوان بحث الدرس<span class="help">(ما الذي تم تحسينه؟)</span></td>
+        <td><input id="research_title"></td>
+        <td class="label">الاستراتيجية / الممارسة المطبقة<span class="help">(كيف تم التحسين؟)</span></td>
+        <td><input id="strategy"></td>
+      </tr>
+      <tr>
+        <td class="label">الهدف من بحث الدرس</td><td colspan="3"><input id="goal"></td>
+      </tr>
+      <tr>
+        <td class="label">اسم المعلمة المنفذة</td><td><input id="teacher"></td>
+        <td class="label">المادة</td><td><input id="subject"></td>
+      </tr>
+      <tr>
+        <td class="label">الصف</td><td><input id="grade"></td>
+        <td class="label">مدة التنفيذ</td><td><input id="duration"></td>
+      </tr>
+      <tr>
+        <td class="label">تاريخ عرض التجربة</td><td colspan="3"><input id="presentation_date"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>ثانيًا: المشكلة أو الجانب المستهدف بالتحسين</h2>
+    <textarea id="problem"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>ثالثًا: وصف مختصر للتجربة وما تم تطبيقه</h2>
+    <textarea id="experience"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>رابعًا: أبرز النتائج التي ظهرت على الطالبات</h2>
+    <textarea id="results"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>خامسًا: أبرز ما تم مشاركته مع المعلمات والتوصيات</h2>
+    <textarea id="shared"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>سادسًا: الحاضرات</h2>
+    <table class="attendees">
+      <thead>
+        <tr>
+          <th style="width:52px">م</th>
+          <th>اسم المعلمة</th>
+          <th>التخصص</th>
+          <th>التوقيع</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><input id="a_name_1"></td><td><input id="a_spec_1"></td><td><input id="a_sig_1"></td></tr>
+        <tr><td>2</td><td><input id="a_name_2"></td><td><input id="a_spec_2"></td><td><input id="a_sig_2"></td></tr>
+        <tr><td>3</td><td><input id="a_name_3"></td><td><input id="a_spec_3"></td><td><input id="a_sig_3"></td></tr>
+        <tr><td>4</td><td><input id="a_name_4"></td><td><input id="a_spec_4"></td><td><input id="a_sig_4"></td></tr>
+        <tr><td>5</td><td><input id="a_name_5"></td><td><input id="a_spec_5"></td><td><input id="a_sig_5"></td></tr>
+        <tr><td>6</td><td><input id="a_name_6"></td><td><input id="a_spec_6"></td><td><input id="a_sig_6"></td></tr>
+        <tr><td>7</td><td><input id="a_name_7"></td><td><input id="a_spec_7"></td><td><input id="a_sig_7"></td></tr>
+        <tr><td>8</td><td><input id="a_name_8"></td><td><input id="a_spec_8"></td><td><input id="a_sig_8"></td></tr>
+        <tr><td>9</td><td><input id="a_name_9"></td><td><input id="a_spec_9"></td><td><input id="a_sig_9"></td></tr>
+        <tr><td>10</td><td><input id="a_name_10"></td><td><input id="a_spec_10"></td><td><input id="a_sig_10"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>سابعًا: اعتماد التنفيذ</h2>
+    <div class="approval">
+      <div class="sig">توقيع المعلمة المنفذة<input id="execsig"></div>
+      <div class="stamp">الختم</div>
+      <div class="sig">مديرة المدرسة<br>هيفاء المعمر<input id="mgrsig"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>إعداد/ د. فاطمة الثنيان</span>
+    <span>مستمرون في التطوير.. لصناعة الفرق</span>
+  </div>
+
+  <div class="actions">
+    <button class="btn primary" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+    <button class="btn secondary" onclick="saveNow()">💾 حفظ البيانات</button>
+    <button class="btn danger" onclick="clearAll()">🗑️ مسح البيانات</button>
+  </div>
+  <div class="note">يفتح النموذج فارغًا، والحفظ يكون على نفس الجهاز فقط عند الضغط على «حفظ البيانات».</div>
+</div>
+
+<script>
+const ids=[
+"term","year","research_title","strategy","goal","teacher","subject","grade","duration","presentation_date",
+"problem","experience","results","shared","execsig","mgrsig",
+"a_name_1","a_spec_1","a_sig_1","a_name_2","a_spec_2","a_sig_2","a_name_3","a_spec_3","a_sig_3",
+"a_name_4","a_spec_4","a_sig_4","a_name_5","a_spec_5","a_sig_5","a_name_6","a_spec_6","a_sig_6",
+"a_name_7","a_spec_7","a_sig_7","a_name_8","a_spec_8","a_sig_8","a_name_9","a_spec_9","a_sig_9",
+"a_name_10","a_spec_10","a_sig_10"
+];
+
+function saveNow(){
+  const d={};
+  ids.forEach(id=>{
+    const e=document.getElementById(id);
+    if(e)d[id]=e.value;
+  });
+  localStorage.setItem("lesson_study_transfer_hafsa_manual",JSON.stringify(d));
+  alert("تم حفظ البيانات على هذا الجهاز.");
+}
+function clearAll(){
+  if(confirm("هل تريدين مسح جميع البيانات من النموذج؟")){
+    ids.forEach(id=>{
+      const e=document.getElementById(id);
+      if(e)e.value="";
+    });
+    localStorage.removeItem("lesson_study_transfer_hafsa_manual");
+  }
+}
+/* لا يتم استرجاع البيانات تلقائيًا عند فتح النموذج */
+</script>
+</body>
+</html>
