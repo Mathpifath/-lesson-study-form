@@ -158,15 +158,15 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
 @media print{
   @page{
     size:A4 portrait;
-    margin:5mm;
+    margin:3mm;
   }
 
-  html, body{
+  html,body{
     margin:0 !important;
     padding:0 !important;
-    width:200mm !important;
-    height:276mm !important;
-    max-height:276mm !important;
+    width:204mm !important;
+    height:270mm !important;
+    max-height:270mm !important;
     overflow:hidden !important;
     background:#fff !important;
     -webkit-print-color-adjust:exact !important;
@@ -174,14 +174,14 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
   }
 
   body{
-    font-size:10.5pt !important;
+    font-size:9pt !important;
   }
 
   .wrap{
-    width:200mm !important;
-    max-width:200mm !important;
-    height:276mm !important;
-    max-height:276mm !important;
+    width:204mm !important;
+    max-width:204mm !important;
+    height:268mm !important;
+    max-height:268mm !important;
     margin:0 !important;
     padding:0 !important;
     border:0 !important;
@@ -189,144 +189,158 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
   }
 
   .header{
-    grid-template-columns:1fr .85fr 1fr !important;
+    grid-template-columns:1fr .82fr 1fr !important;
     gap:3mm !important;
-    min-height:23mm !important;
-    padding:2mm 1mm 2.5mm !important;
-    border-bottom-width:1.2px !important;
+    height:18mm !important;
+    min-height:18mm !important;
+    padding:1.5mm 1mm 1.8mm !important;
+    border-bottom-width:1px !important;
   }
 
-  .header .right,
-  .header .left{
-    font-size:9.8pt !important;
-    line-height:1.35 !important;
+  .header .right,.header .left{
+    font-size:8.4pt !important;
+    line-height:1.22 !important;
   }
 
-  .header-row{
-    gap:1.2mm !important;
-  }
+  .header-row{gap:1mm !important}
 
   .header-row input{
-    width:31mm !important;
-    height:5mm !important;
-    font-size:9.5pt !important;
+    width:28mm !important;
+    height:4.4mm !important;
+    font-size:8.3pt !important;
     padding:0 !important;
   }
 
   .logo{
-    font-size:18pt !important;
-    line-height:1.05 !important;
+    font-size:16pt !important;
+    line-height:1 !important;
   }
 
-  .logo small{
-    font-size:7.5pt !important;
-  }
+  .logo small{font-size:6.5pt !important}
 
   .title{
-    margin:2mm 0 1.5mm !important;
-    padding:2.8mm !important;
-    border-radius:3mm !important;
-    font-size:17pt !important;
-    line-height:1.05 !important;
+    height:10mm !important;
+    margin:1.4mm 0 1mm !important;
+    padding:2mm !important;
+    border-radius:2.5mm !important;
+    font-size:16pt !important;
+    line-height:1 !important;
   }
 
   .section{
-    margin-top:1.6mm !important;
-    border-radius:2mm !important;
+    margin-top:1mm !important;
+    border-radius:1.5mm !important;
     break-inside:avoid !important;
     page-break-inside:avoid !important;
   }
 
   .section h2{
-    padding:1.5mm 2.5mm !important;
-    font-size:11pt !important;
+    height:7mm !important;
+    padding:1.3mm 2mm !important;
+    font-size:9.8pt !important;
+    line-height:1.05 !important;
+  }
+
+  /* بيانات البحث */
+  .section:first-of-type{
+    height:39mm !important;
+  }
+
+  table{table-layout:fixed !important}
+
+  td,th{
+    padding:.7mm .9mm !important;
+    font-size:8.4pt !important;
+    line-height:1.08 !important;
+  }
+
+  .label{width:38mm !important}
+
+  .help{
+    font-size:6.5pt !important;
+    margin-top:.3mm !important;
+  }
+
+  input,textarea{
+    font-size:8.4pt !important;
+    padding:.25mm .6mm !important;
     line-height:1.1 !important;
   }
 
-  table{
-    table-layout:fixed !important;
+  /* أربع خانات السرد: كبيرة وواضحة ولكن محسوبة لتبقى الصفحة واحدة */
+  .narrative{
+    height:24mm !important;
   }
 
-  td, th{
-    padding:1mm 1.2mm !important;
-    font-size:9.6pt !important;
-    line-height:1.18 !important;
-  }
-
-  .label{
-    width:39mm !important;
-  }
-
-  .help{
-    font-size:7.6pt !important;
-    margin-top:.5mm !important;
-  }
-
-  input, textarea{
-    font-size:9.6pt !important;
-    padding:.5mm .8mm !important;
-    line-height:1.22 !important;
-  }
-
-  /* مساحات الكتابة أكبر لتملأ الصفحة */
-  textarea{
-    min-height:20mm !important;
-    height:20mm !important;
-    max-height:20mm !important;
+  .narrative textarea{
+    display:block !important;
+    width:100% !important;
+    height:16.5mm !important;
+    min-height:16.5mm !important;
+    max-height:16.5mm !important;
     overflow:hidden !important;
     resize:none !important;
   }
 
-  /* جدول الحاضرات */
-  .attendees th,
-  .attendees td{
-    height:5.8mm !important;
-    padding:.5mm 1mm !important;
+  /* الحاضرات */
+  .attendees{
+    table-layout:fixed !important;
+  }
+
+  .attendees th,.attendees td{
+    height:4.8mm !important;
+    padding:.25mm .7mm !important;
   }
 
   .attendees input{
-    min-height:4mm !important;
-    height:4mm !important;
+    min-height:3.2mm !important;
+    height:3.2mm !important;
     padding:0 !important;
   }
 
+  /* قسم الحاضرات كاملًا */
+  .section:has(.attendees){
+    height:58mm !important;
+  }
+
   .approval{
-    grid-template-columns:1fr 30mm 1fr !important;
-    gap:2mm !important;
-    min-height:17mm !important;
-    padding:2.5mm !important;
+    grid-template-columns:1fr 27mm 1fr !important;
+    gap:1.5mm !important;
+    height:15mm !important;
+    min-height:15mm !important;
+    padding:1.5mm !important;
   }
 
   .sig{
-    padding:.8mm !important;
-    font-size:9.3pt !important;
-    line-height:1.15 !important;
+    padding:.4mm !important;
+    font-size:8.3pt !important;
+    line-height:1.05 !important;
   }
 
   .sig input{
-    margin-top:1mm !important;
-    height:4mm !important;
+    margin-top:.7mm !important;
+    height:3.5mm !important;
   }
 
   .stamp{
-    border-radius:2mm !important;
-    font-size:9.3pt !important;
+    border-radius:1.5mm !important;
+    font-size:8.3pt !important;
   }
 
   .footer{
-    margin-top:1.5mm !important;
-    padding:0 1mm !important;
-    font-size:8pt !important;
-    line-height:1.1 !important;
+    height:5mm !important;
+    margin-top:1mm !important;
+    padding:0 .5mm !important;
+    font-size:7.1pt !important;
+    line-height:1 !important;
   }
 
-  .actions,
-  .note{
+  .actions,.note{
     display:none !important;
   }
 
-  /* منع الصفحة البيضاء الثانية في Safari */
   *{
+    box-sizing:border-box !important;
     page-break-after:avoid !important;
   }
 }
@@ -380,22 +394,22 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
     </table>
   </div>
 
-  <div class="section">
+  <div class="section narrative">
     <h2>ثانيًا: المشكلة أو الجانب المستهدف بالتحسين</h2>
     <textarea id="problem"></textarea>
   </div>
 
-  <div class="section">
+  <div class="section narrative">
     <h2>ثالثًا: وصف مختصر للتجربة وما تم تطبيقه</h2>
     <textarea id="experience"></textarea>
   </div>
 
-  <div class="section">
+  <div class="section narrative">
     <h2>رابعًا: أبرز النتائج التي ظهرت على الطالبات</h2>
     <textarea id="results"></textarea>
   </div>
 
-  <div class="section">
+  <div class="section narrative">
     <h2>خامسًا: أبرز ما تم مشاركته مع المعلمات والتوصيات</h2>
     <textarea id="shared"></textarea>
   </div>
