@@ -150,10 +150,24 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
   .header{grid-template-columns:1fr}
   .header .left,.header .right,.logo{text-align:center}
   .header-row{justify-content:center}
+
+  .evidence-section{height:31mm !important}
+  .evidence-grid{grid-template-columns:repeat(3,1fr) !important;gap:2mm !important;padding:1.2mm !important;height:24mm !important}
+  .evidence-box{min-height:21mm !important;height:21mm !important;border-radius:1.5mm !important;overflow:hidden !important}
+  .evidence-box input[type=file],.evidence-placeholder{display:none !important}
+  .evidence-box img{display:block !important;width:100% !important;height:100% !important;object-fit:cover !important}
+
   .approval{grid-template-columns:1fr}
   .title{font-size:24px}
   .label{width:155px}
 }
+
+
+.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px}
+.evidence-box{border:1.5px dashed #9cc7e8;border-radius:10px;min-height:120px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#fafdfd}
+.evidence-box input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer}
+.evidence-box img{width:100%;height:100%;object-fit:cover;display:none}
+.evidence-placeholder{text-align:center;font-weight:700;color:#55758d;line-height:1.6}
 
 @media print{
   @page{
@@ -269,15 +283,15 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
 
   /* أربع خانات السرد: كبيرة وواضحة ولكن محسوبة لتبقى الصفحة واحدة */
   .narrative{
-    height:21.3mm !important;
+    height:18.2mm !important;
   }
 
   .narrative textarea{
     display:block !important;
     width:100% !important;
-    height:13.9mm !important;
-    min-height:13.9mm !important;
-    max-height:13.9mm !important;
+    height:10.8mm !important;
+    min-height:10.8mm !important;
+    max-height:10.8mm !important;
     overflow:hidden !important;
     resize:none !important;
   }
@@ -288,26 +302,26 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
   }
 
   .attendees th,.attendees td{
-    height:5.0mm !important;
+    height:4.35mm !important;
     padding:.25mm .7mm !important;
   }
 
   .attendees input{
-    min-height:3.35mm !important;
-    height:3.35mm !important;
+    min-height:2.9mm !important;
+    height:2.9mm !important;
     padding:0 !important;
   }
 
   /* قسم الحاضرات كاملًا */
   .section:has(.attendees){
-    height:61mm !important;
+    height:54mm !important;
   }
 
   .approval{
     grid-template-columns:1fr 27mm 1fr !important;
     gap:1.5mm !important;
-    height:15mm !important;
-    min-height:15mm !important;
+    height:13.5mm !important;
+    min-height:13.5mm !important;
     padding:1.5mm !important;
   }
 
@@ -440,8 +454,30 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
     </table>
   </div>
 
-  <div class="section">
-    <h2>سابعًا: اعتماد التنفيذ</h2>
+  
+  <div class="section evidence-section">
+    <h2>سابعًا: شواهد التنفيذ</h2>
+    <div class="evidence-grid">
+      <label class="evidence-box">
+        <span class="evidence-placeholder">إرفاق صورة الشاهد 1</span>
+        <img alt="شاهد 1">
+        <input type="file" accept="image/*" class="evidence-input">
+      </label>
+      <label class="evidence-box">
+        <span class="evidence-placeholder">إرفاق صورة الشاهد 2</span>
+        <img alt="شاهد 2">
+        <input type="file" accept="image/*" class="evidence-input">
+      </label>
+      <label class="evidence-box">
+        <span class="evidence-placeholder">إرفاق صورة الشاهد 3</span>
+        <img alt="شاهد 3">
+        <input type="file" accept="image/*" class="evidence-input">
+      </label>
+    </div>
+  </div>
+
+<div class="section">
+    <h2>ثامنًا: اعتماد التنفيذ</h2>
     <div class="approval">
       <div class="sig">توقيع المعلمة المنفذة<input id="execsig"></div>
       <div class="stamp">الختم</div>
@@ -491,6 +527,24 @@ function clearAll(){
   }
 }
 /* لا يتم استرجاع البيانات تلقائيًا عند فتح النموذج */
+
+document.querySelectorAll('.evidence-input').forEach(function(input){
+  input.addEventListener('change', function(){
+    var file=this.files && this.files[0];
+    if(!file) return;
+    var box=this.closest('.evidence-box');
+    var img=box.querySelector('img');
+    var ph=box.querySelector('.evidence-placeholder');
+    var reader=new FileReader();
+    reader.onload=function(e){
+      img.src=e.target.result;
+      img.style.display='block';
+      ph.style.display='none';
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
 </script>
 </body>
 </html>
