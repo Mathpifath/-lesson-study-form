@@ -158,54 +158,58 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
 @media print{
   @page{
     size:A4 portrait;
-    margin:7mm;
+    margin:5mm;
   }
 
   html, body{
     margin:0 !important;
     padding:0 !important;
+    width:200mm !important;
+    height:276mm !important;
+    max-height:276mm !important;
+    overflow:hidden !important;
     background:#fff !important;
-    width:auto !important;
-    height:auto !important;
-    min-height:0 !important;
-    overflow:visible !important;
     -webkit-print-color-adjust:exact !important;
     print-color-adjust:exact !important;
   }
 
   body{
-    font-size:9.2pt !important;
+    font-size:10.5pt !important;
   }
 
   .wrap{
-    width:100% !important;
-    max-width:none !important;
+    width:200mm !important;
+    max-width:200mm !important;
+    height:276mm !important;
+    max-height:276mm !important;
     margin:0 !important;
     padding:0 !important;
     border:0 !important;
+    overflow:hidden !important;
   }
 
   .header{
-    grid-template-columns:1fr .9fr 1fr !important;
-    gap:4mm !important;
-    padding-bottom:3mm !important;
+    grid-template-columns:1fr .85fr 1fr !important;
+    gap:3mm !important;
+    min-height:23mm !important;
+    padding:2mm 1mm 2.5mm !important;
     border-bottom-width:1.2px !important;
   }
 
   .header .right,
   .header .left{
-    font-size:9pt !important;
+    font-size:9.8pt !important;
     line-height:1.35 !important;
   }
 
   .header-row{
-    gap:1.5mm !important;
+    gap:1.2mm !important;
   }
 
   .header-row input{
-    width:30mm !important;
+    width:31mm !important;
     height:5mm !important;
-    font-size:8.8pt !important;
+    font-size:9.5pt !important;
     padding:0 !important;
   }
 
@@ -219,23 +223,23 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
   }
 
   .title{
-    margin:3mm 0 2.5mm !important;
-    padding:3mm !important;
+    margin:2mm 0 1.5mm !important;
+    padding:2.8mm !important;
     border-radius:3mm !important;
     font-size:17pt !important;
     line-height:1.05 !important;
   }
 
   .section{
-    margin-top:2mm !important;
+    margin-top:1.6mm !important;
     border-radius:2mm !important;
     break-inside:avoid !important;
     page-break-inside:avoid !important;
   }
 
   .section h2{
-    padding:1.6mm 2.5mm !important;
-    font-size:10.5pt !important;
+    padding:1.5mm 2.5mm !important;
+    font-size:11pt !important;
     line-height:1.1 !important;
   }
 
@@ -245,71 +249,75 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
 
   td, th{
     padding:1mm 1.2mm !important;
-    font-size:8.8pt !important;
-    line-height:1.15 !important;
+    font-size:9.6pt !important;
+    line-height:1.18 !important;
   }
 
   .label{
-    width:38mm !important;
+    width:39mm !important;
   }
 
   .help{
-    font-size:7pt !important;
-    margin-top:.6mm !important;
+    font-size:7.6pt !important;
+    margin-top:.5mm !important;
   }
 
   input, textarea{
-    font-size:8.8pt !important;
-    padding:.4mm .7mm !important;
-    line-height:1.2 !important;
+    font-size:9.6pt !important;
+    padding:.5mm .8mm !important;
+    line-height:1.22 !important;
   }
 
+  /* مساحات الكتابة أكبر لتملأ الصفحة */
   textarea{
-    min-height:18mm !important;
-    height:18mm !important;
-    max-height:18mm !important;
+    min-height:20mm !important;
+    height:20mm !important;
+    max-height:20mm !important;
     overflow:hidden !important;
     resize:none !important;
   }
 
+  /* جدول الحاضرات */
   .attendees th,
   .attendees td{
-    height:6mm !important;
-    padding:.6mm 1mm !important;
+    height:5.8mm !important;
+    padding:.5mm 1mm !important;
   }
 
   .attendees input{
-    min-height:4.2mm !important;
-    height:4.2mm !important;
+    min-height:4mm !important;
+    height:4mm !important;
     padding:0 !important;
   }
 
   .approval{
-    grid-template-columns:1fr 32mm 1fr !important;
-    gap:2.5mm !important;
-    padding:3mm !important;
+    grid-template-columns:1fr 30mm 1fr !important;
+    gap:2mm !important;
+    min-height:17mm !important;
+    padding:2.5mm !important;
   }
 
   .sig{
-    padding:1mm !important;
-    font-size:8.8pt !important;
+    padding:.8mm !important;
+    font-size:9.3pt !important;
     line-height:1.15 !important;
   }
 
   .sig input{
-    margin-top:1.3mm !important;
-    height:4.5mm !important;
+    margin-top:1mm !important;
+    height:4mm !important;
   }
 
   .stamp{
     border-radius:2mm !important;
-    font-size:8.8pt !important;
+    font-size:9.3pt !important;
   }
 
   .footer{
-    margin-top:2mm !important;
-    font-size:7.8pt !important;
-    line-height:1.15 !important;
+    margin-top:1.5mm !important;
+    padding:0 1mm !important;
+    font-size:8pt !important;
+    line-height:1.1 !important;
   }
 
   .actions,
@@ -317,12 +325,9 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
     display:none !important;
   }
 
-  /* منع إنشاء صفحة فارغة إضافية */
-  .wrap,
-  .footer,
-  .section:last-of-type{
+  /* منع الصفحة البيضاء الثانية في Safari */
+  *{
     page-break-after:avoid !important;
-    break-after:avoid-page !important;
   }
 }
 
