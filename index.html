@@ -169,193 +169,194 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
 .evidence-box img{width:100%;height:100%;object-fit:cover;display:none}
 .evidence-placeholder{text-align:center;font-weight:700;color:#55758d;line-height:1.6}
 
+
 @media print{
-  @page{
-    size:A4 portrait;
-    margin:3mm;
-  }
+  @page{size:A4 portrait;margin:3mm}
 
   html,body{
-    margin:0 !important;
-    padding:0 !important;
-    width:204mm !important;
-    height:270mm !important;
-    max-height:270mm !important;
-    overflow:hidden !important;
-    background:#fff !important;
-    -webkit-print-color-adjust:exact !important;
-    print-color-adjust:exact !important;
+    margin:0!important;
+    padding:0!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:visible!important;
+    background:#fff!important;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
   }
 
-  body{
-    font-size:9pt !important;
-  }
+  body{font-size:8.8pt!important}
 
   .wrap{
-    width:204mm !important;
-    max-width:204mm !important;
-    height:268mm !important;
-    max-height:268mm !important;
-    margin:0 !important;
-    padding:0 !important;
-    border:0 !important;
-    overflow:hidden !important;
+    width:204mm!important;
+    max-width:204mm!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:0 auto!important;
+    padding:0!important;
+    border:0!important;
+    overflow:visible!important;
   }
 
   .header{
-    grid-template-columns:1fr .82fr 1fr !important;
-    gap:3mm !important;
-    height:18mm !important;
-    min-height:18mm !important;
-    padding:1.5mm 1mm 1.8mm !important;
-    border-bottom-width:1px !important;
+    grid-template-columns:1fr .8fr 1fr!important;
+    gap:3mm!important;
+    padding:1.4mm 1mm 1.8mm!important;
+    border-bottom-width:1px!important;
   }
 
   .header .right,.header .left{
-    font-size:8.4pt !important;
-    line-height:1.22 !important;
+    font-size:8pt!important;
+    line-height:1.18!important;
   }
 
-  .header-row{gap:1mm !important}
+  .header-row{gap:.8mm!important}
 
   .header-row input{
-    width:28mm !important;
-    height:4.4mm !important;
-    font-size:8.3pt !important;
-    padding:0 !important;
+    width:27mm!important;
+    height:4mm!important;
+    font-size:7.9pt!important;
+    padding:0!important;
   }
 
-  .logo{
-    font-size:16pt !important;
-    line-height:1 !important;
-  }
-
-  .logo small{font-size:6.5pt !important}
+  .logo{font-size:15pt!important;line-height:1!important}
+  .logo small{font-size:6pt!important}
 
   .title{
-    height:10mm !important;
-    margin:1.4mm 0 1mm !important;
-    padding:2mm !important;
-    border-radius:2.5mm !important;
-    font-size:16pt !important;
-    line-height:1 !important;
+    margin:1mm 0 .8mm!important;
+    padding:1.8mm!important;
+    border-radius:2mm!important;
+    font-size:15pt!important;
+    line-height:1!important;
   }
 
   .section{
-    margin-top:1mm !important;
-    border-radius:1.5mm !important;
-    break-inside:avoid !important;
-    page-break-inside:avoid !important;
+    margin-top:.7mm!important;
+    border-radius:1.2mm!important;
+    break-inside:avoid!important;
+    page-break-inside:avoid!important;
   }
 
   .section h2{
-    height:7mm !important;
-    padding:1.3mm 2mm !important;
-    font-size:9.8pt !important;
-    line-height:1.05 !important;
+    padding:1mm 1.8mm!important;
+    font-size:8.9pt!important;
+    line-height:1.02!important;
   }
 
-  /* بيانات البحث */
-  .section:first-of-type{
-    height:39mm !important;
-  }
-
-  table{table-layout:fixed !important}
+  table{table-layout:fixed!important}
 
   td,th{
-    padding:.7mm .9mm !important;
-    font-size:8.4pt !important;
-    line-height:1.08 !important;
+    padding:.45mm .7mm!important;
+    font-size:7.7pt!important;
+    line-height:1.03!important;
   }
 
-  .label{width:38mm !important}
+  .label{width:35mm!important}
 
   .help{
-    font-size:6.5pt !important;
-    margin-top:.3mm !important;
+    font-size:5.8pt!important;
+    margin-top:.2mm!important;
   }
 
   input,textarea{
-    font-size:8.4pt !important;
-    padding:.25mm .6mm !important;
-    line-height:1.1 !important;
+    font-size:7.7pt!important;
+    padding:.2mm .45mm!important;
+    line-height:1.03!important;
   }
 
-  /* أربع خانات السرد: كبيرة وواضحة ولكن محسوبة لتبقى الصفحة واحدة */
   .narrative{
-    height:18.2mm !important;
+    height:14.2mm!important;
   }
 
   .narrative textarea{
-    display:block !important;
-    width:100% !important;
-    height:10.8mm !important;
-    min-height:10.8mm !important;
-    max-height:10.8mm !important;
-    overflow:hidden !important;
-    resize:none !important;
+    display:block!important;
+    width:100%!important;
+    height:8.8mm!important;
+    min-height:8.8mm!important;
+    max-height:8.8mm!important;
+    overflow:hidden!important;
+    resize:none!important;
   }
 
-  /* الحاضرات */
-  .attendees{
-    table-layout:fixed !important;
-  }
+  .attendees{table-layout:fixed!important}
 
   .attendees th,.attendees td{
-    height:4.35mm !important;
-    padding:.25mm .7mm !important;
+    height:3.65mm!important;
+    padding:.12mm .5mm!important;
   }
 
   .attendees input{
-    min-height:2.9mm !important;
-    height:2.9mm !important;
-    padding:0 !important;
+    min-height:2.35mm!important;
+    height:2.35mm!important;
+    padding:0!important;
   }
 
-  /* قسم الحاضرات كاملًا */
-  .section:has(.attendees){
-    height:54mm !important;
+  .evidence-section{
+    height:23mm!important;
+  }
+
+  .evidence-grid{
+    grid-template-columns:repeat(3,1fr)!important;
+    gap:1.4mm!important;
+    padding:.8mm!important;
+    height:18mm!important;
+  }
+
+  .evidence-box{
+    min-height:16mm!important;
+    height:16mm!important;
+    border-radius:1mm!important;
+    overflow:hidden!important;
+  }
+
+  .evidence-box input[type=file],
+  .evidence-placeholder{
+    display:none!important;
+  }
+
+  .evidence-box img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
   }
 
   .approval{
-    grid-template-columns:1fr 27mm 1fr !important;
-    gap:1.5mm !important;
-    height:13.5mm !important;
-    min-height:13.5mm !important;
-    padding:1.5mm !important;
+    grid-template-columns:1fr 24mm 1fr!important;
+    gap:1.2mm!important;
+    min-height:11.5mm!important;
+    padding:1mm!important;
   }
 
   .sig{
-    padding:.4mm !important;
-    font-size:8.3pt !important;
-    line-height:1.05 !important;
+    padding:.2mm!important;
+    font-size:7.7pt!important;
+    line-height:1.02!important;
   }
 
   .sig input{
-    margin-top:.7mm !important;
-    height:3.5mm !important;
+    margin-top:.4mm!important;
+    height:2.8mm!important;
   }
 
   .stamp{
-    border-radius:1.5mm !important;
-    font-size:8.3pt !important;
+    border-radius:1mm!important;
+    font-size:7.7pt!important;
   }
 
   .footer{
-    height:5mm !important;
-    margin-top:1mm !important;
-    padding:0 .5mm !important;
-    font-size:7.1pt !important;
-    line-height:1 !important;
+    margin-top:.6mm!important;
+    padding:0 .3mm!important;
+    font-size:6.4pt!important;
+    line-height:1!important;
   }
 
-  .actions,.note{
-    display:none !important;
-  }
+  .actions,.note{display:none!important}
 
-  *{
-    box-sizing:border-box !important;
-    page-break-after:avoid !important;
+  .footer,.section:last-of-type{
+    break-after:avoid-page!important;
+    page-break-after:avoid!important;
   }
 }
 
