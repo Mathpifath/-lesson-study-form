@@ -21,7 +21,7 @@ table{width:100%;border-collapse:collapse}td,th{border:1px solid #a8cce2;padding
 input,textarea{width:100%;border:0;outline:0;font:inherit;background:#fff;padding:2px;color:#163c5f}textarea{resize:vertical;line-height:1.4}.ta-sm{min-height:48px}.ta-md{min-height:58px}.note-box{padding:5px 8px;background:#fbfeff;font-weight:700;font-size:11px}
 .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:6px}.two-cols .section{margin-top:6px}
 .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:7px}.evidence-card{border:1px dashed #a8cce2;border-radius:8px;padding:5px;background:#fbfeff}.evidence-head{display:flex;justify-content:space-between;align-items:center;gap:5px;font-size:11px;font-weight:700;margin-bottom:4px}.evidence-head input{font-size:9px;max-width:145px}.evidence-box{width:100%;height:105px;border:1px solid #a8cce2;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}.evidence-box img{width:100%;height:100%;object-fit:contain;display:none}.evidence-box.has-image img{display:block}.placeholder{font-size:10px;color:#7a94a7;text-align:center}.evidence-box.has-image .placeholder{display:none}.evidence-caption{margin-top:4px;border:1px solid #d0e3ee!important;border-radius:5px;padding:3px!important;font-size:10px!important}
-.attendees th,.attendees td{padding:2px 4px;font-size:10.5px}.attendees input{min-height:18px;text-align:center}
+.attendees-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}.attendees th,.attendees td{padding:2px 4px;font-size:10px}.attendees input{min-height:18px;text-align:center}.attendees-title{font-size:10.5px;font-weight:700;color:#0d3b66;margin:0 0 3px 0;text-align:center}
 .approval{display:grid;grid-template-columns:1fr 100px 1fr;gap:7px;align-items:stretch;padding:7px}.sig{text-align:center;font-weight:700;font-size:11px}.sig input{border-bottom:1px dotted #4e88b0;margin-top:4px;text-align:center}.stamp{display:flex;align-items:center;justify-content:center;background:#e8f6fc;border-radius:7px;font-weight:700;font-size:11px}
 .footer{display:flex;justify-content:space-between;gap:10px;margin-top:5px;font-size:10px;color:#2b5473}.actions{display:flex;gap:8px;justify-content:center;margin:14px 0 3px;flex-wrap:wrap}.btn{border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer}.primary{background:#0b84c6;color:#fff}.secondary{background:#e9f5f1;color:#0f5b50}.danger{background:#f5ecec;color:#8b2f2f}.note{text-align:center;color:#47738f;font-size:12px}
 @media(max-width:720px){.wrap{margin:0;padding:10px}.header{grid-template-columns:1fr}.header .right,.header .left,.logo{text-align:center}.header-row{justify-content:center}.two-cols,.evidence-grid{grid-template-columns:1fr}.approval{grid-template-columns:1fr}.evidence-box{height:190px}}
@@ -36,7 +36,7 @@ input,textarea{width:100%;border:0;outline:0;font:inherit;background:#fff;paddin
  .ta-sm{min-height:9mm!important;height:9mm!important;max-height:9mm!important;overflow:hidden!important;resize:none!important}.ta-md{min-height:11mm!important;height:11mm!important;max-height:11mm!important;overflow:hidden!important;resize:none!important}
  .note-box{padding:.7mm 1.1mm!important;font-size:5.8pt!important;line-height:1.05!important}.two-cols{gap:.8mm!important}.two-cols .section{margin-top:.7mm!important}
  .evidence-grid{grid-template-columns:repeat(3,1fr)!important;gap:1.2mm!important;padding:1.2mm!important}.evidence-card{padding:.7mm!important;border-radius:1.2mm!important}.evidence-head{margin-bottom:.5mm!important;font-size:5.8pt!important}.evidence-head input{display:none!important}.evidence-box{height:30mm!important;border-radius:1mm!important}.placeholder{font-size:5.5pt!important}.evidence-caption{margin-top:.5mm!important;height:4mm!important;font-size:5.5pt!important;padding:0!important}
- .attendees th,.attendees td{height:3.6mm!important;padding:.15mm .4mm!important;font-size:5.7pt!important;line-height:1!important}.attendees input{min-height:2.8mm!important;height:2.8mm!important}
+ .attendees-grid{grid-template-columns:1fr 1fr!important;gap:1mm!important;padding:.8mm!important}.attendees-title{font-size:5.9pt!important;margin:0 0 .3mm 0!important}.attendees th,.attendees td{height:3.5mm!important;padding:.15mm .35mm!important;font-size:5.4pt!important;line-height:1!important}.attendees input{min-height:2.6mm!important;height:2.6mm!important}
  .approval{grid-template-columns:1fr 23mm 1fr!important;gap:1mm!important;padding:1mm!important}.sig,.stamp{font-size:5.8pt!important}.sig input{margin-top:.4mm!important;height:3mm!important}.footer{margin-top:.6mm!important;font-size:5.5pt!important;line-height:1!important}
  .actions,.note{display:none!important}
 }
@@ -76,9 +76,28 @@ input,textarea{width:100%;border:0;outline:0;font:inherit;background:#fff;paddin
     <div class="evidence-card"><div class="evidence-head"><span>الشاهد الثالث</span><input type="file" accept="image/*" onchange="showImage(3,this)"></div><div class="evidence-box" id="box3"><img id="img3"><div class="placeholder">اختاري صورة الشاهد<br>ستظهر كاملة دون قص</div></div><input id="cap3" class="evidence-caption" placeholder="وصف مختصر (اختياري)"></div>
   </div></div>
 
-  <div class="section"><h2>ثامنًا: الحاضرات</h2><table class="attendees"><thead><tr><th style="width:32px">م</th><th>اسم المعلمة</th><th>التخصص</th><th>التوقيع</th></tr></thead><tbody>
-    <tr><td>1</td><td><input id="a_name_1"></td><td><input id="a_spec_1"></td><td><input id="a_sig_1"></td></tr><tr><td>2</td><td><input id="a_name_2"></td><td><input id="a_spec_2"></td><td><input id="a_sig_2"></td></tr><tr><td>3</td><td><input id="a_name_3"></td><td><input id="a_spec_3"></td><td><input id="a_sig_3"></td></tr><tr><td>4</td><td><input id="a_name_4"></td><td><input id="a_spec_4"></td><td><input id="a_sig_4"></td></tr><tr><td>5</td><td><input id="a_name_5"></td><td><input id="a_spec_5"></td><td><input id="a_sig_5"></td></tr><tr><td>6</td><td><input id="a_name_6"></td><td><input id="a_spec_6"></td><td><input id="a_sig_6"></td></tr><tr><td>7</td><td><input id="a_name_7"></td><td><input id="a_spec_7"></td><td><input id="a_sig_7"></td></tr><tr><td>8</td><td><input id="a_name_8"></td><td><input id="a_spec_8"></td><td><input id="a_sig_8"></td></tr><tr><td>9</td><td><input id="a_name_9"></td><td><input id="a_spec_9"></td><td><input id="a_sig_9"></td></tr><tr><td>10</td><td><input id="a_name_10"></td><td><input id="a_spec_10"></td><td><input id="a_sig_10"></td></tr>
-  </tbody></table></div>
+  <div class="section"><h2>ثامنًا: الحاضرات</h2><div class="attendees-grid">
+    <div>
+      <div class="attendees-title">1 - 5</div>
+      <table class="attendees"><thead><tr><th style="width:24px">م</th><th>اسم المعلمة</th><th>التخصص</th><th>التوقيع</th></tr></thead><tbody>
+        <tr><td>1</td><td><input id="a_name_1"></td><td><input id="a_spec_1"></td><td><input id="a_sig_1"></td></tr>
+        <tr><td>2</td><td><input id="a_name_2"></td><td><input id="a_spec_2"></td><td><input id="a_sig_2"></td></tr>
+        <tr><td>3</td><td><input id="a_name_3"></td><td><input id="a_spec_3"></td><td><input id="a_sig_3"></td></tr>
+        <tr><td>4</td><td><input id="a_name_4"></td><td><input id="a_spec_4"></td><td><input id="a_sig_4"></td></tr>
+        <tr><td>5</td><td><input id="a_name_5"></td><td><input id="a_spec_5"></td><td><input id="a_sig_5"></td></tr>
+      </tbody></table>
+    </div>
+    <div>
+      <div class="attendees-title">6 - 10</div>
+      <table class="attendees"><thead><tr><th style="width:24px">م</th><th>اسم المعلمة</th><th>التخصص</th><th>التوقيع</th></tr></thead><tbody>
+        <tr><td>6</td><td><input id="a_name_6"></td><td><input id="a_spec_6"></td><td><input id="a_sig_6"></td></tr>
+        <tr><td>7</td><td><input id="a_name_7"></td><td><input id="a_spec_7"></td><td><input id="a_sig_7"></td></tr>
+        <tr><td>8</td><td><input id="a_name_8"></td><td><input id="a_spec_8"></td><td><input id="a_sig_8"></td></tr>
+        <tr><td>9</td><td><input id="a_name_9"></td><td><input id="a_spec_9"></td><td><input id="a_sig_9"></td></tr>
+        <tr><td>10</td><td><input id="a_name_10"></td><td><input id="a_spec_10"></td><td><input id="a_sig_10"></td></tr>
+      </tbody></table>
+    </div>
+  </div></div>
 
   <div class="section"><h2>تاسعًا: اعتماد التنفيذ</h2><div class="approval"><div class="sig">توقيع المعلمة المنفذة<input id="execsig"></div><div class="stamp">الختم</div><div class="sig">مديرة المدرسة<br>هيفاء المعمر<input id="mgrsig"></div></div></div>
   <div class="footer"><span>إعداد/ د. فاطمة الثنيان</span><span>مستمرون في التطوير.. لصناعة الفرق</span></div>
