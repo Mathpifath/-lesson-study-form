@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>تقرير نقل تجربة بحث الدرس</title>
+<title>تقرير بحث الدرس</title>
 <style>
 :root{
   --navy:#0d3b66;
@@ -11,20 +11,27 @@
   --mint:#dff3e7;
   --line:#6aaed6;
   --teal:#1f9d8a;
+  --page:#ffffff;
+  --bg:#f3f7fa;
 }
 *{box-sizing:border-box}
 body{
   margin:0;
-  background:#f4f7f9;
+  background:var(--bg);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;
   color:#0f2f57;
 }
-.wrap{
+.wrapper{
   max-width:980px;
-  margin:24px auto;
-  background:#fff;
-  padding:24px;
+  margin:18px auto 28px;
+  padding:0 8px;
+}
+.page{
+  background:var(--page);
   border:1px solid #d8e6ef;
+  padding:22px;
+  margin-bottom:18px;
+  box-shadow:0 2px 10px rgba(0,0,0,.03);
 }
 .header{
   display:grid;
@@ -56,21 +63,21 @@ body{
   color:var(--teal);
   font-weight:800;
   font-size:28px;
-  line-height:1.2
+  line-height:1.2;
 }
 .logo small{display:block;color:#607d8b;font-size:14px;font-weight:500}
 .title{
-  margin:18px 0 14px;
+  margin:16px 0 12px;
   background:linear-gradient(90deg,var(--blue),#eaf7fc,var(--blue));
   border-radius:14px;
   padding:14px;
   text-align:center;
   font-size:30px;
   font-weight:800;
-  color:var(--navy)
+  color:var(--navy);
 }
 .section{
-  margin-top:14px;
+  margin-top:12px;
   border:1px solid var(--line);
   border-radius:12px;
   overflow:hidden;
@@ -80,10 +87,10 @@ body{
   padding:10px 14px;
   background:linear-gradient(90deg,var(--mint),#eaf8ef);
   font-size:20px;
-  color:var(--navy)
+  color:var(--navy);
 }
 table{width:100%;border-collapse:collapse}
-td,th{border:1px solid #a8cce2;padding:9px;vertical-align:middle}
+td,th{border:1px solid #a8cce2;padding:8px;vertical-align:middle}
 th{background:#edf8fc}
 .label{width:210px;background:#eaf6fb;font-weight:700}
 .help{display:block;font-size:12px;font-weight:500;color:#54758a;margin-top:2px}
@@ -94,16 +101,25 @@ input,textarea{
   font:inherit;
   background:#fff;
   padding:6px;
-  color:#163c5f
+  color:#163c5f;
 }
-textarea{min-height:105px;resize:vertical;line-height:1.6}
+textarea{min-height:120px;resize:vertical;line-height:1.7}
+textarea.medium{min-height:140px}
+textarea.short{min-height:100px}
+.note-box{
+  padding:14px 16px;
+  line-height:1.8;
+  background:#fbfeff;
+  font-weight:700;
+}
+.muted{color:#54758a;font-weight:600}
 .attendees input{text-align:center;min-height:30px}
 .approval{
   display:grid;
   grid-template-columns:1fr 180px 1fr;
   gap:16px;
   align-items:stretch;
-  padding:16px
+  padding:16px;
 }
 .sig{padding:10px;text-align:center;font-weight:700}
 .sig input{border-bottom:1px dotted #4e88b0;margin-top:10px;text-align:center}
@@ -113,13 +129,21 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
   justify-content:center;
   background:#e8f6fc;
   border-radius:8px;
-  font-weight:700
+  font-weight:700;
+}
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:16px;
+  font-size:13px;
+  color:#2b5473;
 }
 .actions{
   display:flex;
   gap:10px;
   justify-content:center;
-  margin:22px 0 4px;
+  margin:22px auto 4px;
   flex-wrap:wrap;
 }
 .btn{
@@ -137,377 +161,313 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
 .secondary{background:#e9f5f1;color:#0f5b50}
 .danger{background:#f5ecec;color:#8b2f2f}
 .note{text-align:center;color:#47738f;font-size:13px;margin-top:8px}
-.footer{
-  display:flex;
-  justify-content:space-between;
-  gap:14px;
-  margin-top:16px;
-  font-size:13px;
-  color:#2b5473
+.page-tag{
+  display:none;
 }
+
+.evidence-wrap{padding:12px}
+.evidence-card{
+  border:1px dashed #a8cce2;
+  border-radius:10px;
+  padding:10px;
+  margin-bottom:12px;
+  background:#fbfeff;
+}
+.evidence-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:8px;
+  font-weight:700;
+  color:var(--navy);
+}
+.evidence-controls{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.evidence-input{max-width:270px;font-size:14px}
+.evidence-clear{
+  border:0;
+  border-radius:8px;
+  background:#eef7fb;
+  color:#24567a;
+  padding:8px 10px;
+  font-weight:700;
+  cursor:pointer;
+}
+.evidence-box{
+  width:100%;
+  min-height:54mm;
+  height:54mm;
+  border:1px solid #a8cce2;
+  border-radius:10px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  margin-bottom:8px;
+}
+.evidence-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:none;
+  background:#fff;
+}
+.evidence-box.has-image img{display:block}
+.evidence-placeholder{
+  color:#7893a6;
+  font-size:15px;
+  text-align:center;
+  line-height:1.8;
+  padding:8px;
+}
+.evidence-box.has-image .evidence-placeholder{display:none}
+.evidence-caption{min-height:34px}
+
 @media(max-width:720px){
-  .wrap{margin:0;padding:12px}
+  .wrapper{margin:0;padding:8px}
+  .page{padding:12px;margin-bottom:12px}
   .header{grid-template-columns:1fr}
   .header .left,.header .right,.logo{text-align:center}
   .header-row{justify-content:center}
-
-  .evidence-section{height:31mm !important}
-  .evidence-grid{grid-template-columns:repeat(3,1fr) !important;gap:2mm !important;padding:1.2mm !important;height:24mm !important}
-  .evidence-box{min-height:21mm !important;height:21mm !important;border-radius:1.5mm !important;overflow:hidden !important}
-  .evidence-box input[type=file],.evidence-placeholder{display:none !important}
-  .evidence-box img{
-  display:none;
-  width:auto;
-  height:auto;
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-  object-position:center center;
-  background:#fff;
-  margin:auto;
-}
-
   .approval{grid-template-columns:1fr}
   .title{font-size:24px}
   .label{width:155px}
 }
-
-
-.evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px}
-.evidence-box{border:1.5px dashed #9cc7e8;border-radius:10px;min-height:120px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#fafdfd}
-.evidence-box input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer}
-.evidence-box img{width:100%;height:100%;object-fit:contain;object-position:center center;background:#fff;display:none}
-.evidence-placeholder{text-align:center;font-weight:700;color:#55758d;line-height:1.6}
-
-
 @media print{
-  @page{size:A4 portrait;margin:3mm}
-
+  @page{size:A4 portrait;margin:8mm}
   html,body{
+    width:210mm!important;
     margin:0!important;
     padding:0!important;
-    width:auto!important;
-    height:auto!important;
-    min-height:0!important;
-    max-height:none!important;
-    overflow:visible!important;
     background:#fff!important;
     -webkit-print-color-adjust:exact!important;
     print-color-adjust:exact!important;
   }
-
-  body{font-size:8.8pt!important}
-
-  .wrap{
-    width:204mm!important;
-    max-width:204mm!important;
-    height:auto!important;
-    max-height:none!important;
-    margin:0 auto!important;
+  body{font-size:10.2pt!important}
+  .wrapper{max-width:none!important;margin:0!important;padding:0!important}
+  .page{
+    width:100%!important;
+    min-height:auto!important;
+    margin:0!important;
     padding:0!important;
     border:0!important;
-    overflow:visible!important;
+    box-shadow:none!important;
+    page-break-after:always!important;
+    break-after:page!important;
   }
-
-  .header{
-    grid-template-columns:1fr .8fr 1fr!important;
-    gap:3mm!important;
-    padding:1.4mm 1mm 1.8mm!important;
-    border-bottom-width:1px!important;
-  }
-
-  .header .right,.header .left{
-    font-size:8pt!important;
-    line-height:1.18!important;
-  }
-
-  .header-row{gap:.8mm!important}
-
-  .header-row input{
-    width:27mm!important;
-    height:4mm!important;
-    font-size:7.9pt!important;
-    padding:0!important;
-  }
-
-  .logo{font-size:15pt!important;line-height:1!important}
-  .logo small{font-size:6pt!important}
-
-  .title{
-    margin:1mm 0 .8mm!important;
-    padding:1.8mm!important;
-    border-radius:2mm!important;
-    font-size:15pt!important;
-    line-height:1!important;
-  }
-
-  .section{
-    margin-top:.7mm!important;
-    border-radius:1.2mm!important;
-    break-inside:avoid!important;
-    page-break-inside:avoid!important;
-  }
-
-  .section h2{
-    padding:1mm 1.8mm!important;
-    font-size:8.9pt!important;
-    line-height:1.02!important;
-  }
-
-  table{table-layout:fixed!important}
-
-  td,th{
-    padding:.45mm .7mm!important;
-    font-size:7.7pt!important;
-    line-height:1.03!important;
-  }
-
-  .label{width:35mm!important}
-
-  .help{
-    font-size:5.8pt!important;
-    margin-top:.2mm!important;
-  }
-
-  input,textarea{
-    font-size:7.7pt!important;
-    padding:.2mm .45mm!important;
-    line-height:1.03!important;
-  }
-
-  .narrative{
-    height:14.2mm!important;
-  }
-
-  .narrative textarea{
-    display:block!important;
-    width:100%!important;
-    height:8.8mm!important;
-    min-height:8.8mm!important;
-    max-height:8.8mm!important;
-    overflow:hidden!important;
-    resize:none!important;
-  }
-
-  .attendees{table-layout:fixed!important}
-
-  .attendees th,.attendees td{
-    height:3.65mm!important;
-    padding:.12mm .5mm!important;
-  }
-
-  .attendees input{
-    min-height:2.35mm!important;
-    height:2.35mm!important;
-    padding:0!important;
-  }
-
-  .evidence-section{
-    height:23mm!important;
-  }
-
-  .evidence-grid{
-    grid-template-columns:repeat(3,1fr)!important;
-    gap:1.4mm!important;
-    padding:.8mm!important;
-    height:18mm!important;
-  }
-
-  .evidence-box{
-    min-height:16mm!important;
-    height:16mm!important;
-    border-radius:1mm!important;
-    overflow:hidden!important;
-    display:flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    background:#fff!important;
-  }
-
-  .evidence-box input[type=file],
-  .evidence-placeholder{
-    display:none!important;
-  }
-
-  .evidence-box img{
-    display:block!important;
-    width:auto!important;
-    height:auto!important;
-    max-width:100%!important;
-    max-height:100%!important;
-    object-fit:contain!important;
-    object-position:center center!important;
-    background:#fff!important;
-    margin:auto!important;
-  }
-
-  .approval{
-    grid-template-columns:1fr 24mm 1fr!important;
-    gap:1.2mm!important;
-    min-height:11.5mm!important;
-    padding:1mm!important;
-  }
-
-  .sig{
-    padding:.2mm!important;
-    font-size:7.7pt!important;
-    line-height:1.02!important;
-  }
-
-  .sig input{
-    margin-top:.4mm!important;
-    height:2.8mm!important;
-  }
-
-  .stamp{
-    border-radius:1mm!important;
-    font-size:7.7pt!important;
-  }
-
-  .footer{
-    margin-top:.6mm!important;
-    padding:0 .3mm!important;
-    font-size:6.4pt!important;
-    line-height:1!important;
-  }
-
+  .page:last-of-type{page-break-after:auto!important;break-after:auto!important}
+  .header{gap:10px!important;padding-bottom:10px!important}
+  .header .right,.header .left{font-size:11pt!important;line-height:1.5!important}
+  .logo{font-size:24pt!important}
+  .logo small{font-size:10pt!important}
+  .title{margin:12px 0 10px!important;padding:12px!important;font-size:24pt!important}
+  .section{margin-top:10px!important;break-inside:avoid!important}
+  .section h2{padding:10px 14px!important;font-size:17pt!important}
+  td,th{padding:7px!important;font-size:10.4pt!important;line-height:1.35!important}
+  input,textarea{font-size:10.2pt!important;padding:0!important}
+  textarea.short{min-height:42mm!important;height:42mm!important;max-height:42mm!important;resize:none!important}
+  textarea.medium{min-height:48mm!important;height:48mm!important;max-height:48mm!important;resize:none!important}
+  textarea.compact-print{min-height:24mm!important;height:24mm!important;max-height:24mm!important}
+  #results{min-height:28mm!important;height:28mm!important;max-height:28mm!important}
+  textarea{overflow:hidden!important}
+  .attendees th,.attendees td{height:6.4mm!important;padding:2px 5px!important}
+  .attendees input{min-height:4.8mm!important;height:4.8mm!important}
+  .approval{grid-template-columns:1fr 32mm 1fr!important;gap:8px!important;padding:9px!important}
+  .sig input{margin-top:5px!important;height:5mm!important}
+  .footer{margin-top:8px!important;font-size:9pt!important}
+  .evidence-wrap{padding:10px!important}
+  .evidence-card{padding:8px!important;margin-bottom:10px!important}
+  .evidence-head{margin-bottom:6px!important;font-size:11pt!important}
+  .evidence-controls{display:none!important}
+  .evidence-box{min-height:58mm!important;height:58mm!important}
+  .evidence-caption{min-height:8mm!important;height:8mm!important}
   .actions,.note{display:none!important}
-
-  .footer,.section:last-of-type{
-    break-after:avoid-page!important;
-    page-break-after:avoid!important;
-  }
 }
-
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="header">
-    <div class="right">
-      المملكة العربية السعودية<br>
-      وزارة التعليم<br>
-      الإدارة العامة للتعليم بمنطقة الرياض
+<div class="wrapper">
+  <div class="page">
+    <div class="header">
+      <div class="right">
+        المملكة العربية السعودية<br>
+        وزارة التعليم<br>
+        الإدارة العامة للتعليم بمنطقة الرياض
+      </div>
+      <div class="logo">
+        وزارة التعليم
+        <small>Ministry of Education</small>
+      </div>
+      <div class="left">
+        ثانوية حفصة بنت سيرين
+        <div class="header-row"><span>الفصل الدراسي:</span><input id="term"></div>
+        <div class="header-row"><span>العام:</span><input id="year"></div>
+      </div>
     </div>
-    <div class="logo">
-      وزارة التعليم
-      <small>Ministry of Education</small>
-    </div>
-    <div class="left">
-      ثانوية حفصة بنت سيرين
-      <div class="header-row"><span>الفصل الدراسي:</span><input id="term"></div>
-      <div class="header-row"><span>العام:</span><input id="year"></div>
-    </div>
-  </div>
 
-  <div class="title">تقرير نقل تجربة بحث الدرس</div>
+    <div class="title">تقرير بحث الدرس</div>
 
-  <div class="section">
-    <h2>أولًا: بيانات البحث</h2>
-    <table>
-      <tr>
-        <td class="label">عنوان بحث الدرس<span class="help">(ما الذي تم تحسينه؟)</span></td>
-        <td><input id="research_title"></td>
-        <td class="label">الاستراتيجية / الممارسة المطبقة<span class="help">(كيف تم التحسين؟)</span></td>
-        <td><input id="strategy"></td>
-      </tr>
-      <tr>
-        <td class="label">الهدف من بحث الدرس</td><td colspan="3"><input id="goal"></td>
-      </tr>
-      <tr>
-        <td class="label">اسم المعلمة المنفذة</td><td><input id="teacher"></td>
-        <td class="label">المادة</td><td><input id="subject"></td>
-      </tr>
-      <tr>
-        <td class="label">الصف</td><td><input id="grade"></td>
-        <td class="label">مدة التنفيذ</td><td><input id="duration"></td>
-      </tr>
-      <tr>
-        <td class="label">تاريخ عرض التجربة</td><td colspan="3"><input id="presentation_date"></td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="section narrative">
-    <h2>ثانيًا: المشكلة أو الجانب المستهدف بالتحسين</h2>
-    <textarea id="problem"></textarea>
-  </div>
-
-  <div class="section narrative">
-    <h2>ثالثًا: وصف مختصر للتجربة وما تم تطبيقه</h2>
-    <textarea id="experience"></textarea>
-  </div>
-
-  <div class="section narrative">
-    <h2>رابعًا: أبرز النتائج التي ظهرت على الطالبات</h2>
-    <textarea id="results"></textarea>
-  </div>
-
-  <div class="section narrative">
-    <h2>خامسًا: أبرز ما تم مشاركته مع المعلمات والتوصيات</h2>
-    <textarea id="shared"></textarea>
-  </div>
-
-  <div class="section">
-    <h2>سادسًا: الحاضرات</h2>
-    <table class="attendees">
-      <thead>
+    <div class="section">
+      <h2>أولًا: بيانات بحث الدرس</h2>
+      <table>
         <tr>
-          <th style="width:52px">م</th>
-          <th>اسم المعلمة</th>
-          <th>التخصص</th>
-          <th>التوقيع</th>
+          <td class="label">عنوان بحث الدرس<span class="help">(ما الذي تم تحسينه؟)</span></td>
+          <td><input id="research_title"></td>
+          <td class="label">الاستراتيجية / الممارسة المطبقة<span class="help">(كيف تم التحسين؟)</span></td>
+          <td><input id="strategy"></td>
         </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td><input id="a_name_1"></td><td><input id="a_spec_1"></td><td><input id="a_sig_1"></td></tr>
-        <tr><td>2</td><td><input id="a_name_2"></td><td><input id="a_spec_2"></td><td><input id="a_sig_2"></td></tr>
-        <tr><td>3</td><td><input id="a_name_3"></td><td><input id="a_spec_3"></td><td><input id="a_sig_3"></td></tr>
-        <tr><td>4</td><td><input id="a_name_4"></td><td><input id="a_spec_4"></td><td><input id="a_sig_4"></td></tr>
-        <tr><td>5</td><td><input id="a_name_5"></td><td><input id="a_spec_5"></td><td><input id="a_sig_5"></td></tr>
-        <tr><td>6</td><td><input id="a_name_6"></td><td><input id="a_spec_6"></td><td><input id="a_sig_6"></td></tr>
-        <tr><td>7</td><td><input id="a_name_7"></td><td><input id="a_spec_7"></td><td><input id="a_sig_7"></td></tr>
-        <tr><td>8</td><td><input id="a_name_8"></td><td><input id="a_spec_8"></td><td><input id="a_sig_8"></td></tr>
-        <tr><td>9</td><td><input id="a_name_9"></td><td><input id="a_spec_9"></td><td><input id="a_sig_9"></td></tr>
-        <tr><td>10</td><td><input id="a_name_10"></td><td><input id="a_spec_10"></td><td><input id="a_sig_10"></td></tr>
-      </tbody>
-    </table>
-  </div>
+        <tr>
+          <td class="label">اسم المعلمة المنفذة</td><td><input id="teacher"></td>
+          <td class="label">المادة</td><td><input id="subject"></td>
+        </tr>
+        <tr>
+          <td class="label">الصف</td><td><input id="grade"></td>
+          <td class="label">موضوع الدرس</td><td><input id="lesson_topic"></td>
+        </tr>
+        <tr>
+          <td class="label">مدة التنفيذ</td><td><input id="execution_period" placeholder="مثال: أسبوع / حصتان / من ... إلى ..."></td>
+          <td class="label">تاريخ عرض التجربة</td><td><input id="presentation_date"></td>
+        </tr>
+      </table>
+    </div>
 
-  
-  <div class="section evidence-section">
-    <h2>سابعًا: شواهد التنفيذ</h2>
-    <div class="evidence-grid">
-      <label class="evidence-box">
-        <span class="evidence-placeholder">إرفاق صورة الشاهد 1</span>
-        <img alt="شاهد 1">
-        <input type="file" accept="image/*" class="evidence-input">
-      </label>
-      <label class="evidence-box">
-        <span class="evidence-placeholder">إرفاق صورة الشاهد 2</span>
-        <img alt="شاهد 2">
-        <input type="file" accept="image/*" class="evidence-input">
-      </label>
-      <label class="evidence-box">
-        <span class="evidence-placeholder">إرفاق صورة الشاهد 3</span>
-        <img alt="شاهد 3">
-        <input type="file" accept="image/*" class="evidence-input">
-      </label>
+    <div class="section">
+      <h2>ثانيًا: المشكلة أو الجانب المستهدف بالتحسين</h2>
+      <textarea id="problem" class="short"></textarea>
+    </div>
+
+    <div class="section">
+      <h2>ثالثًا: وصف مختصر للتجربة وما تم تطبيقه</h2>
+      <textarea id="experience" class="medium"></textarea>
     </div>
   </div>
 
-<div class="section">
-    <h2>ثامنًا: اعتماد التنفيذ</h2>
-    <div class="approval">
-      <div class="sig">توقيع المعلمة المنفذة<input id="execsig"></div>
-      <div class="stamp">الختم</div>
-      <div class="sig">مديرة المدرسة<br>هيفاء المعمر<input id="mgrsig"></div>
+  <div class="page">
+    <div class="section" style="margin-top:0">
+      <h2>رابعًا: قياس الأثر والنتائج</h2>
+      <div class="note-box">
+        تم توثيق قياس الأثر عبر نموذج <span class="muted">قياس أثر بحث الدرس الإلكتروني</span>.
+      </div>
+      <table>
+        <tr>
+          <td class="label" style="width:240px">أبرز النتائج التي أظهرها القياس</td>
+          <td><textarea id="results" class="medium"></textarea></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>خامسًا: أبرز ما تم مشاركته مع المعلمات</h2>
+      <textarea id="shared" class="short compact-print"></textarea>
+    </div>
+
+    <div class="section">
+      <h2>سادسًا: أبرز التوصيات والمقترحات</h2>
+      <textarea id="recommendations" class="short compact-print"></textarea>
+    </div>
+
+    <div class="section">
+      <h2>سابعًا: الحاضرات</h2>
+      <table class="attendees">
+        <thead>
+          <tr>
+            <th style="width:52px">م</th>
+            <th>اسم المعلمة</th>
+            <th>التخصص</th>
+            <th>التوقيع</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><input id="a_name_1"></td><td><input id="a_spec_1"></td><td><input id="a_sig_1"></td></tr>
+          <tr><td>2</td><td><input id="a_name_2"></td><td><input id="a_spec_2"></td><td><input id="a_sig_2"></td></tr>
+          <tr><td>3</td><td><input id="a_name_3"></td><td><input id="a_spec_3"></td><td><input id="a_sig_3"></td></tr>
+          <tr><td>4</td><td><input id="a_name_4"></td><td><input id="a_spec_4"></td><td><input id="a_sig_4"></td></tr>
+          <tr><td>5</td><td><input id="a_name_5"></td><td><input id="a_spec_5"></td><td><input id="a_sig_5"></td></tr>
+          <tr><td>6</td><td><input id="a_name_6"></td><td><input id="a_spec_6"></td><td><input id="a_sig_6"></td></tr>
+          <tr><td>7</td><td><input id="a_name_7"></td><td><input id="a_spec_7"></td><td><input id="a_sig_7"></td></tr>
+          <tr><td>8</td><td><input id="a_name_8"></td><td><input id="a_spec_8"></td><td><input id="a_sig_8"></td></tr>
+          <tr><td>9</td><td><input id="a_name_9"></td><td><input id="a_spec_9"></td><td><input id="a_sig_9"></td></tr>
+          <tr><td>10</td><td><input id="a_name_10"></td><td><input id="a_spec_10"></td><td><input id="a_sig_10"></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>ثامنًا: اعتماد التنفيذ</h2>
+      <div class="approval">
+        <div class="sig">توقيع المعلمة المنفذة<input id="execsig"></div>
+        <div class="stamp">الختم</div>
+        <div class="sig">مديرة المدرسة<br>هيفاء المعمر<input id="mgrsig"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>إعداد/ د. فاطمة الثنيان</span>
+      <span>مستمرون في التطوير.. لصناعة الفرق</span>
     </div>
   </div>
 
-  <div class="footer">
-    <span>إعداد/ د. فاطمة الثنيان</span>
-    <span>مستمرون في التطوير.. لصناعة الفرق</span>
+  <div class="page">
+    <div class="section" style="margin-top:0">
+      <h2>تاسعًا: الشواهد</h2>
+      <div class="evidence-wrap">
+        <div class="evidence-card">
+          <div class="evidence-head">
+            <span>الشاهد الأول</span>
+            <div class="evidence-controls">
+              <input type="file" accept="image/*" class="evidence-input" onchange="handleEvidenceUpload(1,this)">
+              <button type="button" class="evidence-clear" onclick="clearEvidence(1)">حذف الصورة</button>
+            </div>
+          </div>
+          <div class="evidence-box" id="evidence_box_1">
+            <img id="evidence_img_1" alt="الشاهد الأول">
+            <div class="evidence-placeholder">أرفقي صورة الشاهد هنا<br>ستظهر كاملة دون قص عند الطباعة</div>
+          </div>
+          <input id="evidence_caption_1" class="evidence-caption" placeholder="وصف مختصر للشاهد الأول (اختياري)">
+        </div>
+
+        <div class="evidence-card">
+          <div class="evidence-head">
+            <span>الشاهد الثاني</span>
+            <div class="evidence-controls">
+              <input type="file" accept="image/*" class="evidence-input" onchange="handleEvidenceUpload(2,this)">
+              <button type="button" class="evidence-clear" onclick="clearEvidence(2)">حذف الصورة</button>
+            </div>
+          </div>
+          <div class="evidence-box" id="evidence_box_2">
+            <img id="evidence_img_2" alt="الشاهد الثاني">
+            <div class="evidence-placeholder">أرفقي صورة الشاهد هنا<br>ستظهر كاملة دون قص عند الطباعة</div>
+          </div>
+          <input id="evidence_caption_2" class="evidence-caption" placeholder="وصف مختصر للشاهد الثاني (اختياري)">
+        </div>
+
+        <div class="evidence-card">
+          <div class="evidence-head">
+            <span>الشاهد الثالث</span>
+            <div class="evidence-controls">
+              <input type="file" accept="image/*" class="evidence-input" onchange="handleEvidenceUpload(3,this)">
+              <button type="button" class="evidence-clear" onclick="clearEvidence(3)">حذف الصورة</button>
+            </div>
+          </div>
+          <div class="evidence-box" id="evidence_box_3">
+            <img id="evidence_img_3" alt="الشاهد الثالث">
+            <div class="evidence-placeholder">أرفقي صورة الشاهد هنا<br>ستظهر كاملة دون قص عند الطباعة</div>
+          </div>
+          <input id="evidence_caption_3" class="evidence-caption" placeholder="وصف مختصر للشاهد الثالث (اختياري)">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>إعداد/ د. فاطمة الثنيان</span>
+      <span>مستمرون في التطوير.. لصناعة الفرق</span>
+    </div>
   </div>
 
   <div class="actions">
@@ -515,18 +475,33 @@ textarea{min-height:105px;resize:vertical;line-height:1.6}
     <button class="btn secondary" onclick="saveNow()">💾 حفظ البيانات</button>
     <button class="btn danger" onclick="clearAll()">🗑️ مسح البيانات</button>
   </div>
-  <div class="note">يفتح النموذج فارغًا، والحفظ يكون على نفس الجهاز فقط عند الضغط على «حفظ البيانات».</div>
+  <div class="note">النموذج موزع على عدة صفحات، ويتضمن صفحة مستقلة للشواهد. الحفظ يكون على نفس الجهاز فقط عند الضغط على «حفظ البيانات».</div>
 </div>
 
 <script>
 const ids=[
-"term","year","research_title","strategy","goal","teacher","subject","grade","duration","presentation_date",
-"problem","experience","results","shared","execsig","mgrsig",
-"a_name_1","a_spec_1","a_sig_1","a_name_2","a_spec_2","a_sig_2","a_name_3","a_spec_3","a_sig_3",
-"a_name_4","a_spec_4","a_sig_4","a_name_5","a_spec_5","a_sig_5","a_name_6","a_spec_6","a_sig_6",
-"a_name_7","a_spec_7","a_sig_7","a_name_8","a_spec_8","a_sig_8","a_name_9","a_spec_9","a_sig_9",
-"a_name_10","a_spec_10","a_sig_10"
+  "term","year","research_title","strategy","teacher","subject","grade","lesson_topic","execution_period","presentation_date",
+  "problem","experience","results","shared","recommendations","execsig","mgrsig","evidence_caption_1","evidence_caption_2","evidence_caption_3",
+  "a_name_1","a_spec_1","a_sig_1","a_name_2","a_spec_2","a_sig_2","a_name_3","a_spec_3","a_sig_3",
+  "a_name_4","a_spec_4","a_sig_4","a_name_5","a_spec_5","a_sig_5","a_name_6","a_spec_6","a_sig_6",
+  "a_name_7","a_spec_7","a_sig_7","a_name_8","a_spec_8","a_sig_8","a_name_9","a_spec_9","a_sig_9",
+  "a_name_10","a_spec_10","a_sig_10"
 ];
+const storageKey="lesson_study_report_hafsa";
+
+window.addEventListener("DOMContentLoaded",()=>{
+  const raw=localStorage.getItem(storageKey);
+  if(raw){
+    try{
+      const d=JSON.parse(raw);
+      ids.forEach(id=>{
+        const e=document.getElementById(id);
+        if(e && d[id]!==undefined)e.value=d[id];
+      });
+    }catch(err){}
+  }
+  [1,2,3].forEach(loadEvidence);
+});
 
 function saveNow(){
   const d={};
@@ -534,37 +509,76 @@ function saveNow(){
     const e=document.getElementById(id);
     if(e)d[id]=e.value;
   });
-  localStorage.setItem("lesson_study_transfer_hafsa_manual",JSON.stringify(d));
+  localStorage.setItem(storageKey,JSON.stringify(d));
   alert("تم حفظ البيانات على هذا الجهاز.");
 }
+
+function handleEvidenceUpload(n,input){
+  const file=input.files && input.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    const source=new Image();
+    source.onload=function(){
+      const maxW=1400, maxH=950;
+      let w=source.width, h=source.height;
+      const ratio=Math.min(maxW/w, maxH/h, 1);
+      w=Math.round(w*ratio);
+      h=Math.round(h*ratio);
+      const canvas=document.createElement('canvas');
+      canvas.width=w;
+      canvas.height=h;
+      const ctx=canvas.getContext('2d');
+      ctx.fillStyle='#ffffff';
+      ctx.fillRect(0,0,w,h);
+      ctx.drawImage(source,0,0,w,h);
+      const data=canvas.toDataURL('image/jpeg',0.82);
+      showEvidence(n,data);
+      try{
+        localStorage.setItem(`${storageKey}_img_${n}`,data);
+      }catch(err){
+        alert('تم إدراج الصورة، لكن تعذر حفظها محليًا بسبب حجمها. يمكنك الطباعة مباشرة بعد الإرفاق.');
+      }
+    };
+    source.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function showEvidence(n,data){
+  const img=document.getElementById(`evidence_img_${n}`);
+  const box=document.getElementById(`evidence_box_${n}`);
+  if(img && box){
+    img.src=data;
+    box.classList.add('has-image');
+  }
+}
+
+function loadEvidence(n){
+  const data=localStorage.getItem(`${storageKey}_img_${n}`);
+  if(data) showEvidence(n,data);
+}
+
+function clearEvidence(n){
+  const img=document.getElementById(`evidence_img_${n}`);
+  const box=document.getElementById(`evidence_box_${n}`);
+  if(img) img.removeAttribute('src');
+  if(box) box.classList.remove('has-image');
+  localStorage.removeItem(`${storageKey}_img_${n}`);
+  const inputs=document.querySelectorAll('.evidence-input');
+  if(inputs[n-1]) inputs[n-1].value='';
+}
+
 function clearAll(){
   if(confirm("هل تريدين مسح جميع البيانات من النموذج؟")){
     ids.forEach(id=>{
       const e=document.getElementById(id);
       if(e)e.value="";
     });
-    localStorage.removeItem("lesson_study_transfer_hafsa_manual");
+    localStorage.removeItem(storageKey);
+    [1,2,3].forEach(clearEvidence);
   }
 }
-/* لا يتم استرجاع البيانات تلقائيًا عند فتح النموذج */
-
-document.querySelectorAll('.evidence-input').forEach(function(input){
-  input.addEventListener('change', function(){
-    var file=this.files && this.files[0];
-    if(!file) return;
-    var box=this.closest('.evidence-box');
-    var img=box.querySelector('img');
-    var ph=box.querySelector('.evidence-placeholder');
-    var reader=new FileReader();
-    reader.onload=function(e){
-      img.src=e.target.result;
-      img.style.display='block';
-      ph.style.display='none';
-    };
-    reader.readAsDataURL(file);
-  });
-});
-
 </script>
 </body>
 </html>
