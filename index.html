@@ -27,7 +27,7 @@ th{background:#edf8fc}
 .help{display:block;font-size:9px;font-weight:500;color:#54758a}
 input,textarea{width:100%;border:0;outline:0;font:inherit;background:#fff;padding:2px;color:#163c5f}
 input{min-height:24px}
-textarea{resize:vertical;line-height:1.35}
+textarea{resize:vertical;line-height:1.45}.desc-box{min-height:92px;border:1px dotted #aacce0!important;border-radius:6px;padding:7px!important;background:#fff!important}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .grid-2 .section{margin-top:0}
 .point-box{padding:4px 6px;background:var(--soft)}
@@ -65,41 +65,43 @@ textarea{resize:vertical;line-height:1.35}
 @media print{
  @page{size:A4 portrait;margin:2.5mm}
  html,body{width:210mm!important;height:297mm!important;margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
- body{font-size:9.7pt!important}
+ body{font-size:10.2pt!important}
  .wrap{width:205mm!important;max-width:205mm!important;margin:0 auto!important;padding:0!important;border:0!important}
- .header{grid-template-columns:1fr .78fr 1fr!important;gap:2mm!important;padding:.8mm .8mm 1.2mm!important;border-bottom-width:1.1px!important}
- .header .right,.header .left{font-size:7.8pt!important;line-height:1.08!important}
- .header-row input{width:26mm!important;height:3.4mm!important;font-size:7.8pt!important}
- .logo{font-size:14pt!important}.logo small{font-size:5.7pt!important;margin-top:.2mm!important}
- .title{margin:.55mm 0 .45mm!important;padding:1.2mm!important;font-size:14.5pt!important;border-radius:2mm!important;line-height:1!important}
- .section{margin-top:.35mm!important;border-radius:1.35mm!important;break-inside:avoid!important;page-break-inside:avoid!important}
- .section h2{padding:.7mm 1.3mm!important;font-size:8.6pt!important;line-height:1.02!important}
- .section-body{padding:.45mm!important}
- td,th{padding:.42mm .55mm!important;font-size:7.35pt!important;line-height:1.08!important}
- .label{width:31mm!important}.help{font-size:5.7pt!important}
- input,textarea{font-size:7.5pt!important;padding:.12mm .4mm!important;line-height:1.1!important}
- input{min-height:3.1mm!important;height:3.1mm!important}
- .grid-2{gap:.5mm!important}
- .point-box{padding:.18mm .45mm!important}
- .point-line{grid-template-columns:3.8mm 1fr!important;gap:.45mm!important;margin:.08mm 0!important}
- .point-no{width:3.5mm!important;height:3.5mm!important;font-size:6.2pt!important}
- .point-input{height:3.5mm!important;min-height:3.5mm!important;padding:0 .45mm!important;font-size:7.1pt!important}
- .note-box{padding:.35mm .6mm!important;font-size:6.4pt!important;line-height:1.05!important;margin-bottom:.25mm!important}
- .evidence-grid{grid-template-columns:repeat(3,1fr)!important;gap:.6mm!important;padding:.45mm!important}
- .evidence-card{padding:.35mm!important;border-radius:.8mm!important}
- .evidence-head{margin-bottom:.2mm!important;font-size:6.5pt!important}.evidence-head input[type=file]{display:none!important}
- .evidence-box{height:11mm!important;border-radius:.7mm!important}.placeholder{font-size:5.6pt!important;line-height:1.05!important}
- .evidence-caption{margin-top:.2mm!important;height:3mm!important;min-height:3mm!important;font-size:6.1pt!important;padding:0 .25mm!important}
- .attendees-grid{grid-template-columns:1fr 1fr!important;gap:.55mm!important;padding:.45mm!important}
- .attendees-title{font-size:6.5pt!important;margin:0 0 .15mm 0!important}
- .attendees th,.attendees td{height:3.35mm!important;padding:.05mm .18mm!important;font-size:6.2pt!important;line-height:1!important}
- .attendees input{height:2.65mm!important;min-height:2.65mm!important;font-size:6.3pt!important;padding:0 .2mm!important}
- .approval{grid-template-columns:1fr 22mm 1fr!important;gap:.6mm!important;padding:.45mm!important}
- .sig,.stamp{font-size:6.5pt!important}.sig input{margin-top:.2mm!important;height:2.8mm!important}
- .footer{margin-top:.12mm!important;font-size:6.2pt!important;line-height:1!important}
+ .header{grid-template-columns:1fr .78fr 1fr!important;gap:2.2mm!important;padding:1mm .8mm 1.5mm!important;border-bottom-width:1.1px!important}
+ .header .right,.header .left{font-size:8.8pt!important;line-height:1.15!important}
+ .header-row input{width:28mm!important;height:3.8mm!important;font-size:8.8pt!important}
+ .logo{font-size:16pt!important}.logo small{font-size:6.4pt!important;margin-top:.2mm!important}
+ .title{margin:.75mm 0 .55mm!important;padding:1.5mm!important;font-size:16pt!important;border-radius:1.8mm!important;line-height:1!important}
+ .section{margin-top:.45mm!important;border-radius:1.25mm!important;break-inside:avoid!important;page-break-inside:avoid!important}
+ .section h2{padding:.9mm 1.5mm!important;font-size:9.6pt!important;line-height:1.04!important}
+ .section-body{padding:.6mm!important}
+ td,th{padding:.55mm .7mm!important;font-size:8.2pt!important;line-height:1.1!important}
+ .label{width:32mm!important}.help{font-size:6pt!important}
+ input,textarea{font-size:8.5pt!important;padding:.18mm .5mm!important;line-height:1.15!important}
+ input{min-height:3.5mm!important;height:3.5mm!important}
+ .grid-2{gap:.65mm!important}
+ .desc-box{height:17mm!important;min-height:17mm!important;max-height:17mm!important;overflow:hidden!important;resize:none!important;font-size:8.8pt!important;line-height:1.25!important;padding:.9mm!important}
+ .point-box{padding:.25mm .5mm!important}
+ .point-line{grid-template-columns:4.2mm 1fr!important;gap:.55mm!important;margin:.08mm 0!important}
+ .point-no{width:4mm!important;height:4mm!important;font-size:6.9pt!important}
+ .point-input{height:4.2mm!important;min-height:4.2mm!important;padding:0 .55mm!important;font-size:8pt!important}
+ .note-box{padding:.45mm .7mm!important;font-size:6.8pt!important;line-height:1.08!important;margin-bottom:.3mm!important}
+ .evidence-grid{grid-template-columns:repeat(3,1fr)!important;gap:.7mm!important;padding:.55mm!important}
+ .evidence-card{padding:.4mm!important;border-radius:.8mm!important}
+ .evidence-head{margin-bottom:.2mm!important;font-size:6.8pt!important}.evidence-head input[type=file]{display:none!important}
+ .evidence-box{height:10mm!important;border-radius:.7mm!important}.placeholder{font-size:5.8pt!important;line-height:1.05!important}
+ .evidence-caption{margin-top:.2mm!important;height:3.2mm!important;min-height:3.2mm!important;font-size:6.2pt!important;padding:0 .25mm!important}
+ .attendees-grid{grid-template-columns:1fr 1fr!important;gap:.65mm!important;padding:.5mm!important}
+ .attendees-title{font-size:6.8pt!important;margin:0 0 .15mm 0!important}
+ .attendees th,.attendees td{height:4mm!important;padding:.08mm .2mm!important;font-size:6.7pt!important;line-height:1!important}
+ .attendees .col-num{width:6%!important}.attendees .col-name{width:46%!important}.attendees .col-spec{width:22%!important}.attendees .col-sign{width:26%!important}
+ .attendees input{height:3.2mm!important;min-height:3.2mm!important;font-size:7.2pt!important;padding:0 .25mm!important}
+ .attendees td:nth-child(2) input{text-align:right!important}
+ .approval{grid-template-columns:1fr 23mm 1fr!important;gap:.7mm!important;padding:.55mm!important}
+ .sig,.stamp{font-size:6.9pt!important}.sig input{margin-top:.2mm!important;height:3.1mm!important}
+ .footer{margin-top:.2mm!important;font-size:6.7pt!important;line-height:1!important}
  .actions,.note{display:none!important}
- }
-</style>
+ }</style>
 </head>
 <body>
 <div class="wrap">
@@ -118,20 +120,12 @@ textarea{resize:vertical;line-height:1.35}
   </table></div>
 
   <div class="grid-2">
-    <div class="section"><h2>ثانيًا: المشكلة أو الجانب المستهدف بالتحسين</h2><div class="point-box">
-      <div class="point-line"><div class="point-no">1</div><input id="problem_1" class="point-input"></div>
-      <div class="point-line"><div class="point-no">2</div><input id="problem_2" class="point-input"></div>
-      <div class="point-line"><div class="point-no">3</div><input id="problem_3" class="point-input"></div>
-      <div class="point-line"><div class="point-no">4</div><input id="problem_4" class="point-input"></div>
-      <div class="point-line"><div class="point-no">5</div><input id="problem_5" class="point-input"></div>
-    </div></div>
-    <div class="section"><h2>ثالثًا: وصف مختصر للتجربة وما تم تطبيقه</h2><div class="point-box">
-      <div class="point-line"><div class="point-no">1</div><input id="experience_1" class="point-input"></div>
-      <div class="point-line"><div class="point-no">2</div><input id="experience_2" class="point-input"></div>
-      <div class="point-line"><div class="point-no">3</div><input id="experience_3" class="point-input"></div>
-      <div class="point-line"><div class="point-no">4</div><input id="experience_4" class="point-input"></div>
-      <div class="point-line"><div class="point-no">5</div><input id="experience_5" class="point-input"></div>
-    </div></div>
+    <div class="section"><h2>ثانيًا: المشكلة أو الجانب المستهدف بالتحسين</h2>
+      <div class="section-body"><textarea id="problem" class="desc-box" placeholder="صفي بإيجاز المشكلة أو الجانب الذي استهدفه بحث الدرس بالتحسين."></textarea></div>
+    </div>
+    <div class="section"><h2>ثالثًا: وصف مختصر للتجربة وما تم تطبيقه</h2>
+      <div class="section-body"><textarea id="experience" class="desc-box" placeholder="صفي بإيجاز ما تم تطبيقه أثناء التجربة وخطوات التنفيذ."></textarea></div>
+    </div>
   </div>
 
   <div class="grid-2">
@@ -196,8 +190,7 @@ textarea{resize:vertical;line-height:1.35}
 </div>
 <script>
 const ids=["term","year","research_title","strategy","teacher","subject","grade","lesson_topic","execution_period","presentation_date",
-"problem_1","problem_2","problem_3","problem_4","problem_5",
-"experience_1","experience_2","experience_3","experience_4","experience_5",
+"problem","experience",
 "results_1","results_2","results_3","results_4","results_5",
 "shared_1","shared_2","shared_3","shared_4","shared_5",
 "recommendations_1","recommendations_2","recommendations_3","recommendations_4","recommendations_5",
