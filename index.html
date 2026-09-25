@@ -22,6 +22,13 @@ input,textarea{width:100%;border:0;outline:0;font:inherit;background:#fff;paddin
 .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:6px}.two-cols .section{margin-top:6px}
 .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:7px}.evidence-card{border:1px dashed #a8cce2;border-radius:8px;padding:5px;background:#fbfeff}.evidence-head{display:flex;justify-content:space-between;align-items:center;gap:5px;font-size:11px;font-weight:700;margin-bottom:4px}.evidence-head input{font-size:9px;max-width:145px}.evidence-box{width:100%;height:105px;border:1px solid #a8cce2;border-radius:7px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}.evidence-box img{width:100%;height:100%;object-fit:contain;display:none}.evidence-box.has-image img{display:block}.placeholder{font-size:10px;color:#7a94a7;text-align:center}.evidence-box.has-image .placeholder{display:none}.evidence-caption{margin-top:4px;border:1px solid #d0e3ee!important;border-radius:5px;padding:3px!important;font-size:10px!important}
 .attendees-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}.attendees th,.attendees td{padding:2px 4px;font-size:10px}.attendees input{min-height:18px;text-align:center}.attendees-title{font-size:10.5px;font-weight:700;color:#0d3b66;margin:0 0 3px 0;text-align:center}
+
+.bullet-list{padding:6px 8px;background:#fff}
+.bullet-row{display:grid;grid-template-columns:26px 1fr;align-items:center;gap:6px;border-bottom:1px dotted #b7cfdf;min-height:34px}
+.bullet-row:last-child{border-bottom:0}
+.bullet-num{text-align:center;font-weight:700;color:#356b91}
+.bullet-row input{border:0!important;border-radius:0!important;padding:5px 4px!important;background:transparent!important}
+
 .approval{display:grid;grid-template-columns:1fr 100px 1fr;gap:7px;align-items:stretch;padding:7px}.sig{text-align:center;font-weight:700;font-size:11px}.sig input{border-bottom:1px dotted #4e88b0;margin-top:4px;text-align:center}.stamp{display:flex;align-items:center;justify-content:center;background:#e8f6fc;border-radius:7px;font-weight:700;font-size:11px}
 .footer{display:flex;justify-content:space-between;gap:10px;margin-top:5px;font-size:10px;color:#2b5473}.actions{display:flex;gap:8px;justify-content:center;margin:14px 0 3px;flex-wrap:wrap}.btn{border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer}.primary{background:#0b84c6;color:#fff}.secondary{background:#e9f5f1;color:#0f5b50}.danger{background:#f5ecec;color:#8b2f2f}.note{text-align:center;color:#47738f;font-size:12px}
 @media(max-width:720px){.wrap{margin:0;padding:10px}.header{grid-template-columns:1fr}.header .right,.header .left,.logo{text-align:center}.header-row{justify-content:center}.two-cols,.evidence-grid{grid-template-columns:1fr}.approval{grid-template-columns:1fr}.evidence-box{height:190px}}
@@ -67,8 +74,26 @@ input,textarea{width:100%;border:0;outline:0;font:inherit;background:#fff;paddin
   <div class="section"><h2>رابعًا: قياس الأثر والنتائج</h2><div class="note-box">تم توثيق قياس الأثر عبر نموذج قياس أثر بحث الدرس الإلكتروني.</div><table><tr><td class="label">أبرز النتائج التي أظهرها القياس</td><td><textarea id="results" class="ta-sm"></textarea></td></tr></table></div>
 
   <div class="two-cols">
-    <div class="section"><h2>خامسًا: أبرز ما تم مشاركته مع المعلمات</h2><textarea id="shared" class="ta-sm"></textarea></div>
-    <div class="section"><h2>سادسًا: أبرز التوصيات والمقترحات</h2><textarea id="recommendations" class="ta-sm"></textarea></div>
+    <div class="section"><h2>خامسًا: أبرز ما تم مشاركته مع المعلمات</h2>
+      <div class="bullet-list">
+        <div class="bullet-row"><span class="bullet-num">1</span><input id="shared_1"></div>
+        <div class="bullet-row"><span class="bullet-num">2</span><input id="shared_2"></div>
+        <div class="bullet-row"><span class="bullet-num">3</span><input id="shared_3"></div>
+        <div class="bullet-row"><span class="bullet-num">4</span><input id="shared_4"></div>
+        <div class="bullet-row"><span class="bullet-num">5</span><input id="shared_5"></div>
+        <div class="bullet-row"><span class="bullet-num">6</span><input id="shared_6"></div>
+      </div>
+    </div>
+    <div class="section"><h2>سادسًا: أبرز التوصيات والمقترحات</h2>
+      <div class="bullet-list">
+        <div class="bullet-row"><span class="bullet-num">1</span><input id="recommendations_1"></div>
+        <div class="bullet-row"><span class="bullet-num">2</span><input id="recommendations_2"></div>
+        <div class="bullet-row"><span class="bullet-num">3</span><input id="recommendations_3"></div>
+        <div class="bullet-row"><span class="bullet-num">4</span><input id="recommendations_4"></div>
+        <div class="bullet-row"><span class="bullet-num">5</span><input id="recommendations_5"></div>
+        <div class="bullet-row"><span class="bullet-num">6</span><input id="recommendations_6"></div>
+      </div>
+    </div>
   </div>
 
   <div class="section"><h2>سابعًا: الشواهد</h2><div class="evidence-grid">
@@ -107,7 +132,7 @@ input,textarea{width:100%;border:0;outline:0;font:inherit;background:#fff;paddin
   <div class="note">صفحة A4 واحدة. الصور تظهر كاملة باستخدام الاحتواء داخل الإطار دون قص.</div>
 </div>
 <script>
-const ids=["term","year","research_title","strategy","teacher","subject","grade","lesson_topic","execution_period","presentation_date","problem","experience","results","shared","recommendations","cap1","cap2","cap3","execsig","mgrsig",
+const ids=["term","year","research_title","strategy","teacher","subject","grade","lesson_topic","execution_period","presentation_date","problem","experience","results","shared_1","shared_2","shared_3","shared_4","shared_5","shared_6","recommendations_1","recommendations_2","recommendations_3","recommendations_4","recommendations_5","recommendations_6","cap1","cap2","cap3","execsig","mgrsig",
 "a_name_1","a_spec_1","a_sig_1","a_name_2","a_spec_2","a_sig_2","a_name_3","a_spec_3","a_sig_3","a_name_4","a_spec_4","a_sig_4","a_name_5","a_spec_5","a_sig_5","a_name_6","a_spec_6","a_sig_6","a_name_7","a_spec_7","a_sig_7","a_name_8","a_spec_8","a_sig_8","a_name_9","a_spec_9","a_sig_9","a_name_10","a_spec_10","a_sig_10"];
 const key="lesson_study_report_one_page";
 function showImage(n,input){const file=input.files&&input.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{const img=document.getElementById('img'+n);img.src=e.target.result;document.getElementById('box'+n).classList.add('has-image');};r.readAsDataURL(file);}
