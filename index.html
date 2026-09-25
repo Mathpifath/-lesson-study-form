@@ -52,23 +52,23 @@ textarea{resize:vertical;line-height:1.35}
 .attendees{table-layout:fixed}
 .attendees th,.attendees td{padding:2px 4px;font-size:10px;line-height:1.1}
 .attendees input{min-height:20px;height:20px;padding:1px 4px;text-align:center}
-.attendees .col-num{width:24px}
-.attendees .col-name{width:44%}
-.attendees .col-spec{width:25%}
-.attendees .col-sign{width:31%}
-.approval{display:grid;grid-template-columns:1fr 95px 1fr;gap:7px;align-items:stretch;padding:6px}
+.attendees .col-num{width:6%}
+.attendees .col-name{width:48%}
+.attendees .col-spec{width:20%}
+.attendees .col-sign{width:26%}
+.approval{display:grid;grid-template-columns:1fr 105px 1fr;gap:7px;align-items:stretch;padding:8px 6px}
 .sig{text-align:center;font-weight:700;font-size:11px}
-.sig input{border-bottom:1px dotted #4e88b0;margin-top:4px;text-align:center;height:22px}
-.stamp{display:flex;align-items:center;justify-content:center;background:#e8f6fc;border-radius:7px;font-weight:700;font-size:11px}
+.sig input{border-bottom:1px dotted #4e88b0;margin-top:5px;text-align:center;height:28px}
+.stamp{display:flex;align-items:center;justify-content:center;background:#e8f6fc;border-radius:7px;font-weight:700;font-size:12px;min-height:52px}
 .footer{display:flex;justify-content:space-between;gap:10px;margin-top:4px;font-size:10px;color:#2b5473}
 .actions{display:flex;gap:8px;justify-content:center;margin:14px 0 3px;flex-wrap:wrap}
 .btn{border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer}.primary{background:#0b84c6;color:#fff}.secondary{background:#e9f5f1;color:#0f5b50}.danger{background:#f5ecec;color:#8b2f2f}.note{text-align:center;color:#47738f;font-size:12px}
 @media(max-width:720px){.wrap{margin:0;padding:10px}.header{grid-template-columns:1fr}.header .right,.header .left,.logo{text-align:center}.header-row{justify-content:center}.grid-2,.evidence-grid,.attendees-grid,.approval{grid-template-columns:1fr}.evidence-box{height:160px}}
 @media print{
  @page{size:A4 portrait;margin:2.2mm}
- html,body{width:210mm!important;height:297mm!important;margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
- body{font-size:10.4pt!important}
- .wrap{width:205.6mm!important;max-width:205.6mm!important;margin:0 auto!important;padding:0!important;border:0!important}
+ html,body{width:210mm!important;height:auto!important;overflow:hidden!important;margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+ body{font-size:10.7pt!important;min-height:296mm!important}
+ .wrap{width:205.6mm!important;max-width:205.6mm!important;margin:0 auto!important;padding:0!important;border:0!important;min-height:292mm!important;overflow:hidden!important;page-break-after:avoid!important}
  .header{grid-template-columns:1fr .8fr 1fr!important;gap:2.2mm!important;padding:1mm .9mm 1.4mm!important;border-bottom-width:1.1px!important}
  .header .right,.header .left{font-size:8.6pt!important;line-height:1.16!important}
  .header-row input{width:28mm!important;height:3.8mm!important;font-size:8.5pt!important}
@@ -82,7 +82,7 @@ textarea{resize:vertical;line-height:1.35}
  input,textarea{font-size:7.95pt!important;padding:.15mm .45mm!important;line-height:1.14!important}
  input{min-height:3.35mm!important;height:3.35mm!important}
  .grid-2{gap:.65mm!important}
- .desc-box{height:19mm!important;min-height:19mm!important;max-height:19mm!important;resize:none!important;overflow:hidden!important;font-size:8.3pt!important;line-height:1.28!important;padding:.9mm!important}
+ .desc-box{height:20mm!important;min-height:20mm!important;max-height:20mm!important;resize:none!important;overflow:hidden!important;font-size:8.45pt!important;line-height:1.3!important;padding:1mm!important}
  .point-box{padding:.22mm .5mm!important}
  .point-grid-2{display:grid!important;grid-template-columns:1fr 1fr!important;gap:.25mm .9mm!important}
  .point-line{grid-template-columns:3.9mm 1fr!important;gap:.45mm!important;margin:.08mm 0!important}
@@ -92,16 +92,16 @@ textarea{resize:vertical;line-height:1.35}
  .evidence-grid{grid-template-columns:repeat(3,1fr)!important;gap:.7mm!important;padding:.5mm!important}
  .evidence-card{padding:.35mm!important;border-radius:.8mm!important}
  .evidence-head{margin-bottom:.18mm!important;font-size:6.6pt!important}.evidence-head input[type=file]{display:none!important}
- .evidence-box{height:10mm!important;border-radius:.7mm!important}.placeholder{font-size:5.6pt!important;line-height:1.04!important}
+ .evidence-box{height:9.2mm!important;border-radius:.7mm!important}.placeholder{font-size:5.6pt!important;line-height:1.04!important}
  .evidence-caption{margin-top:.18mm!important;height:2.8mm!important;min-height:2.8mm!important;font-size:5.9pt!important;padding:0 .2mm!important}
  .attendees-grid{grid-template-columns:1fr 1fr!important;gap:.65mm!important;padding:.5mm!important}
  .attendees-title{font-size:6.9pt!important;margin:0 0 .18mm 0!important}
- .attendees th,.attendees td{height:3.55mm!important;padding:.08mm .2mm!important;font-size:6.65pt!important;line-height:1!important}
- .attendees input{height:2.9mm!important;min-height:2.9mm!important;font-size:6.95pt!important;padding:0 .25mm!important}
- .attendees .col-num{width:8%!important}.attendees .col-name{width:40%!important}.attendees .col-spec{width:22%!important}.attendees .col-sign{width:30%!important}
- .approval{grid-template-columns:1fr 23mm 1fr!important;gap:.7mm!important;padding:.5mm!important}
- .sig,.stamp{font-size:7pt!important}.sig input{margin-top:.18mm!important;height:2.9mm!important}
- .footer{margin-top:.18mm!important;font-size:6.8pt!important;line-height:1!important}
+ .attendees th,.attendees td{height:3.85mm!important;padding:.08mm .18mm!important;font-size:6.8pt!important;line-height:1!important}
+ .attendees input{height:3.25mm!important;min-height:3.25mm!important;font-size:7.15pt!important;padding:0 .2mm!important}
+ .attendees .col-num{width:5%!important}.attendees .col-name{width:48%!important}.attendees .col-spec{width:19%!important}.attendees .col-sign{width:28%!important}
+ .approval{grid-template-columns:1fr 24mm 1fr!important;gap:.8mm!important;padding:1.2mm .8mm!important}
+ .sig,.stamp{font-size:7.25pt!important}.sig input{margin-top:.35mm!important;height:5.2mm!important}.stamp{min-height:12mm!important}
+ .footer{margin-top:.5mm!important;font-size:6.9pt!important;line-height:1.05!important;padding-bottom:.6mm!important}
  .actions,.note{display:none!important}
 }
 </style>
@@ -204,7 +204,7 @@ const ids=["term","year","research_title","strategy","teacher","subject","grade"
 "recommendations_1","recommendations_2","recommendations_3","recommendations_4","recommendations_5","recommendations_6","recommendations_7","recommendations_8",
 "cap1","cap2","cap3","execsig","mgrsig",
 "a_name_1","a_spec_1","a_sig_1","a_name_2","a_spec_2","a_sig_2","a_name_3","a_spec_3","a_sig_3","a_name_4","a_spec_4","a_sig_4","a_name_5","a_spec_5","a_sig_5","a_name_6","a_spec_6","a_sig_6","a_name_7","a_spec_7","a_sig_7","a_name_8","a_spec_8","a_sig_8","a_name_9","a_spec_9","a_sig_9","a_name_10","a_spec_10","a_sig_10"];
-const key="lesson_study_report_one_page_v5";
+const key="lesson_study_report_one_page_v6";
 function showImage(n,input){const file=input.files&&input.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{const img=document.getElementById('img'+n);img.src=e.target.result;document.getElementById('box'+n).classList.add('has-image');};r.readAsDataURL(file);}
 function saveNow(){const d={};ids.forEach(id=>{const e=document.getElementById(id);if(e)d[id]=e.value});localStorage.setItem(key,JSON.stringify(d));alert('تم حفظ البيانات النصية على هذا الجهاز. الصور تبقى ظاهرة في الجلسة الحالية ويمكن طباعتها مباشرة.');}
 function clearAll(){if(confirm('هل تريدين مسح جميع البيانات من النموذج؟')){ids.forEach(id=>{const e=document.getElementById(id);if(e)e.value=''});[1,2,3].forEach(n=>{document.getElementById('img'+n).removeAttribute('src');document.getElementById('box'+n).classList.remove('has-image')});localStorage.removeItem(key);}}
